@@ -1,0 +1,73 @@
+<html>
+<head>
+  <title>s</title>
+  <script type="text/javascript">
+    function toggleVisibility() {
+      var dropdownContent = this.parentNode.parentNode.getElementsByClassName('dropdown-content')[0];
+      var displayStatus = dropdownContent.style.display;
+      dropdownContent.style.display = (!displayStatus || displayStatus === 'none') ? 'block' : 'none';
+    }
+  </script>
+  <style>
+    .flex {
+      display: flex;
+    }
+    .flex-row {
+      flex-direction: row;
+    }
+    .clickable {
+      color: blue;
+      cursor: pointer;
+    }
+    .dropdown-content {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="flex flex-row">
+      [checkerboard_///_
+      <a href=https://legnes.github.io/checkerboard/>project</a>_///_
+      <a href=https://github.com/legnes/checkerboard/>source</a>_///_
+      <a class="clickable" onclick="toggleVisibility.call(this)">info</a>]
+    </div>
+   <div class="dropdown-content">
+      Sometimes I say: "doodling helps me think". Or: "it keeps my hands busy". Does that really explain anything? Truth be told I don't know why I do it, but then again anyone would be hard pressed to come up with a plausible motivation when they notice they've spent the last half an hour filling in the enclosed sections of every a, b, d, g, o, p, q, and R on a page. I have a few go-to doodles, mostly lettering and patterns. One of them consists of closed shapes superimposed on a checkerboard. The "phase" of the checkerboard pattern (i.e. whether the, say, top left square is black or white) flips across the boundaries defined by the shapes. "Checkerboard" is a webgl take on that doodle. Initially conceived as an excuse to play with full-screen quads, "Checkerboard" grew into a small-scale particle system driven by a physical simulation running on the gpu. The trickiest subsystem to write was probably collision response -- the implementation here is a little hackier than I'd like. I had a blast working out the Runge-Kutta integration and lens optics, but nobody's checked my math, so they could be totally wrong!
+    </div>
+  </div>
+  <div>
+    <div class="flex flex-row">
+      [robotanical///_
+      <a href=https://legnes.github.io/robotanical/>project</a>_///_
+      <a href=https://github.com/legnes/robotanical/>source</a>_///_
+      <a class="clickable" onclick="toggleVisibility.call(this)">info</a>]
+    </div>
+   <div class="dropdown-content">
+      Ethan Edwards and I collaborated on Robotanical for ProcJam2016. It was conceived as an svg garden filled with plants. Each plant would be its own Lindenmayer system, drawn by a turtle and parsed into svg. The garden only reached a prototypical stage before wilting away.
+    </div>
+  </div>
+  <div>
+    <div class="flex flex-row">
+      [jueves///_
+      <a href=https://legnes.github.io/jueves/>project</a>_///_
+      <a href=https://github.com/legnes/jueves/>source</a>_///_
+      <a class="clickable" onclick="toggleVisibility.call(this)">info</a>]
+    </div>
+   <div class="dropdown-content">
+      Jueves was built for the Global Game Jam 2017. It was based on an existing threejs demo. I had some difficulty coming up with an input scheme that I could feed intuitively into the gpu simulation, but I ended up very pleased with the canvas/key system. The frag shader was sort of a random heuristic, but when I demoed the game, almost everyone commented on its "unique asthetic"...Other fun things in this project included fine-tuning the simulation physics for playability and a questionable use of gpu readback!
+    </div>
+  </div>
+  <div>
+    <div class="flex flex-row">
+      [walk///_
+      <a href=https://legnes.github.io/walk/>project</a>_///_
+      <a href=https://github.com/legnes/walk/>source</a>_///_
+      <a class="clickable" onclick="toggleVisibility.call(this)">info</a>]
+    </div>
+   <div class="dropdown-content">
+      Walk is the start of a simulation/animation aimed at the question: Can we use Monte Carlo methods to reliably fill a discretely subdivided space with one single, randomly-generated closed path? Also: How does the mode of propagation of the path affect success/failure? (Note: the method attempted here largely fails to complete the challenge.)
+    </div>
+  </div>
+</body>
+</html>
