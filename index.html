@@ -4,11 +4,8 @@
   <script type="text/javascript">
     // TODO:
     //    o pictures (thumbnails? background image?)
-    //    o animate stuff! just to be goofy
     //    o better styling
     //    o unity projects
-    //    o punch up descriptions
-    //    o punch up project pages?
     //    o other pages(?) (music? imdb? resume?)
   </script>
   <script type="text/javascript">
@@ -31,6 +28,9 @@
     .row-wiggle:hover {
       animation: wiggle 0.25s alternate infinite ease-in-out;
     }
+    .dropdown-content {
+      margin: 0.5rem 0 1rem 0;
+    }
     .clickable {
       color: blue;
       cursor: pointer;
@@ -42,7 +42,7 @@
       font-weight: bold;
     }
     @keyframes wiggle {
-      to { transform: scale(1.01,1); }
+      to { transform: scale(1.01,1.25); }
     }
   </style>
 </head>
@@ -55,7 +55,7 @@
       <a class="clickable" onclick="toggleVisibility.call(this)">info</a>
     </div>
    <div class="dropdown-content hidden">
-      That's me!
+      That's me! I'm a software engineer based in new york city. You can find some things I've made right here on this page.
     </div>
   </div>
   <div>
@@ -66,18 +66,7 @@
       <a class="clickable" onclick="toggleVisibility.call(this)">info</a>
     </div>
    <div class="dropdown-content hidden">
-      Sometimes I say: "doodling helps me think". Or: "it keeps my hands busy". Does that really explain anything? Truth be told I don't know why I do it, but then again anyone would be hard pressed to come up with a plausible motivation when they notice they've spent the last half an hour filling in the enclosed sections of every a, b, d, g, o, p, q, and R on a page. I have a few go-to doodles, mostly lettering and patterns. One of them consists of closed shapes superimposed on a checkerboard. The "phase" of the checkerboard pattern (i.e. whether the, say, top left square is black or white) flips across the boundaries defined by the shapes. "Checkerboard" is a webgl take on that doodle. Initially conceived as an excuse to play with full-screen quads, "Checkerboard" grew into a small-scale particle system driven by a physical simulation running on the gpu. The trickiest subsystem to write was probably collision response -- the implementation here is a little hackier than I'd like. I had a blast working out the Runge-Kutta integration and lens optics, but nobody's checked my math, so they could be totally wrong!
-    </div>
-  </div>
-  <div>
-    <div class="flex flex-row row-medium row-wiggle">
-      robotanical
-      <a href="https://legnes.github.io/robotanical">project</a>
-      <a href="https://github.com/legnes/robotanical">source</a>
-      <a class="clickable" onclick="toggleVisibility.call(this)">info</a>
-    </div>
-   <div class="dropdown-content hidden">
-      Ethan Edwards and I collaborated on Robotanical for ProcJam2016. It was conceived as an svg garden filled with plants. Each plant would be its own Lindenmayer system, drawn by a turtle and parsed into svg. The garden only reached a prototypical stage before wilting away.
+      Checkerboard is a threejs/webgl take on a doodle I've done since I was a kid. Initially conceived as an excuse to play with full-screen quads + frag shaders, Checkerboard grew into a small-scale particle system driven by a physical simulation running on the gpu. I had a blast working out a Runge-Kutta integrator and some simple lens optics (although I should probably find someone to check my math)!
     </div>
   </div>
   <div>
@@ -88,7 +77,18 @@
       <a class="clickable" onclick="toggleVisibility.call(this)">info</a>
     </div>
    <div class="dropdown-content hidden">
-      Jueves was built for the Global Game Jam 2017. It was based on an existing threejs demo. I had some difficulty coming up with an input scheme that I could feed intuitively into the gpu simulation, but I ended up very pleased with the canvas/key system. The frag shader was sort of a random heuristic, but when I demoed the game, almost everyone commented on its "unique asthetic"...Other fun things in this project included fine-tuning the simulation physics for playability and a questionable use of gpu readback!
+      I built Jueves for the Global Game Jam 2017. It's an expansion and variation on <a href="">an existing threejs demo</a>. The bulk of the ~40 hours alotted went towards coming up with the canvas/key input scheme and tuning the simulation and input for gameplay (there was a nasty energy leak from the input system). I was surprised that play testers had an overwhelmingly positive reaction to the "asthetic", since the shader logic is all very simple!
+    </div>
+  </div>
+  <div>
+    <div class="flex flex-row row-medium row-wiggle">
+      robotanical
+      <a href="https://legnes.github.io/robotanical">project</a>
+      <a href="https://github.com/legnes/robotanical">source</a>
+      <a class="clickable" onclick="toggleVisibility.call(this)">info</a>
+    </div>
+   <div class="dropdown-content hidden">
+      Ethan Edwards and I collaborated on Robotanical for ProcJam2016, although busy schedules left it in a somewhat unfinished state. The idea was to cultivate an svg garden filled with plants grown by Lindenmayer systems and parsed into svg by a turtle renderer. The version here demonstrates the core functionality by implementing a few well-known L-systems.
     </div>
   </div>
   <div>
@@ -99,7 +99,7 @@
       <a class="clickable" onclick="toggleVisibility.call(this)">info</a>
     </div>
    <div class="dropdown-content hidden">
-      Walk is the start of a simulation/animation aimed at the question: Can we use Monte Carlo methods to reliably fill a discretely subdivided space with one single, randomly-generated closed path? Also: How does the mode of propagation of the path affect success/failure? (Note: the method attempted here largely fails to complete the challenge.)
+      Walk is a simulation/animation aimed at the question: "can we use Monte Carlo methods to reliably fill a discretely subdivided space with one single, randomly-generated closed path?" Also: "how does the mode of propagation of the path affect success/failure?" The implementation here indicates two clear answers: "no", and "not much." But it's kind of hypnotizing anyway.
     </div>
   </div>
 </body>
