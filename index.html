@@ -3,10 +3,9 @@
   <title>s</title>
   <script type="text/javascript">
     // TODO:
-    //    o pictures (thumbnails? background image?)
-    //    o better styling
     //    o unity projects
     //    o other pages(?) (music? imdb? resume?)
+    //    o pictures (bckground? in "info"?)
   </script>
   <script type="text/javascript">
     function toggleVisibility() {
@@ -26,10 +25,16 @@
       width: 50%;
     }
     .row-wiggle:hover {
-      animation: wiggle 0.25s alternate infinite ease-in-out;
+      animation: wiggle 10s alternate infinite ease-in-out;
     }
     .dropdown-content {
       margin: 0.5rem 0 1rem 0;
+    }
+    .image-small {
+      height: 1rem;
+    }
+    .image-medium {
+      height: 20rem;
     }
     .clickable {
       color: blue;
@@ -42,14 +47,17 @@
       font-weight: bold;
     }
     @keyframes wiggle {
-      to { transform: scale(1.01,1.25); }
+      to { transform: scale(1.01,3); }
     }
   </style>
 </head>
 <body>
   <div>
     <div class="flex flex-row row-medium row-wiggle">
-      <div class="bold">sam engel</div>
+      <div class="bold">
+        <img class="image-small" src="assets/thumb_s.png" />
+        sam engel
+      </div>
       <a>project</a>
       <a>source</a>
       <a class="clickable" onclick="toggleVisibility.call(this)">info</a>
@@ -60,46 +68,63 @@
   </div>
   <div>
     <div class="flex flex-row row-medium row-wiggle">
-      checkerboard
+      <div>
+        <img class="image-small" src="assets/thumb_check.png" />
+        checkerboard
+      </div>
       <a href="https://legnes.github.io/checkerboard">project</a>
       <a href="https://github.com/legnes/checkerboard">source</a>
       <a class="clickable" onclick="toggleVisibility.call(this)">info</a>
     </div>
    <div class="dropdown-content hidden">
-      Checkerboard is a threejs/webgl take on a doodle I've done since I was a kid. Initially conceived as an excuse to play with full-screen quads + frag shaders, Checkerboard grew into a small-scale particle system driven by a physical simulation running on the gpu. I had a blast working out a Runge-Kutta integrator and some simple lens optics (although I should probably find someone to check my math)!
+      Checkerboard is a threejs/webgl take on a doodle I've done since I was a kid (it looked kind of like this):
+      <div>
+        <img class="image-medium" src="assets/check1.jpg"/>
+        <img class="image-medium" src="assets/check2.jpg"/>
+      </div>
+      Initially conceived as an excuse to play with full-screen quads + frag shaders, Checkerboard grew into a small-scale particle system driven by a physical simulation running on the gpu. I had a blast working out a Runge-Kutta integrator and some simple lens optics!
     </div>
   </div>
   <div>
     <div class="flex flex-row row-medium row-wiggle">
-      jueves
+      <div>
+        <img class="image-small" src="assets/thumb_jueves.png" />
+        jueves
+      </div>
       <a href="https://legnes.github.io/jueves">project</a>
       <a href="https://github.com/legnes/jueves">source</a>
       <a class="clickable" onclick="toggleVisibility.call(this)">info</a>
     </div>
    <div class="dropdown-content hidden">
-      I built Jueves for the Global Game Jam 2017. It's an expansion and variation on <a href="">an existing threejs demo</a>. The bulk of the ~40 hours alotted went towards coming up with the canvas/key input scheme and tuning the simulation and input for gameplay (there was a nasty energy leak from the input system). I was surprised that play testers had an overwhelmingly positive reaction to the "asthetic", since the shader logic is all very simple!
+      I built Jueves for the Global Game Jam 2017. It's an expansion and variation on <a href="https://threejs.org/examples/#webgl_gpgpu_water">an existing threejs demo</a>. No small part of the ~40 hours jamming time went towards creating the canvas/key control scheme and tuning the simulation for gameplay (there was a nasty energy leak from the input model). I stuck with pretty simple shader logic but I ended up happy with the look!
     </div>
   </div>
   <div>
     <div class="flex flex-row row-medium row-wiggle">
-      robotanical
+      <div>
+        <img class="image-small" src="assets/thumb_robotanical.png" />
+        robotanical
+      </div>
       <a href="https://legnes.github.io/robotanical">project</a>
       <a href="https://github.com/legnes/robotanical">source</a>
       <a class="clickable" onclick="toggleVisibility.call(this)">info</a>
     </div>
    <div class="dropdown-content hidden">
-      Ethan Edwards and I collaborated on Robotanical for ProcJam2016, although busy schedules left it in a somewhat unfinished state. The idea was to cultivate an svg garden filled with plants grown by Lindenmayer systems and parsed into svg by a turtle renderer. The version here demonstrates the core functionality by implementing a few well-known L-systems.
+      Ethan Edwards and I collaborated on Robotanical for ProcJam2016, although busy schedules left it in a somewhat unfinished state. The idea was to cultivate a virtual garden of plants grown by Lindenmayer systems and parsed into svg by a turtle renderer. The version here demonstrates the core functionality by implementing a few well-known L-systems.
     </div>
   </div>
   <div>
     <div class="flex flex-row row-medium row-wiggle">
-      walk
+      <div>
+        <img class="image-small" src="assets/thumb_walk.png" />
+        walk
+      </div>
       <a href="https://legnes.github.io/walk">project</a>
       <a href="https://github.com/legnes/walk">source</a>
       <a class="clickable" onclick="toggleVisibility.call(this)">info</a>
     </div>
    <div class="dropdown-content hidden">
-      Walk is a simulation/animation aimed at the question: "can we use Monte Carlo methods to reliably fill a discretely subdivided space with one single, randomly-generated closed path?" Also: "how does the mode of propagation of the path affect success/failure?" The implementation here indicates two clear answers: "no", and "not much." But it's kind of hypnotizing anyway.
+      Walk is an animation/experiment that attempts to fill a discretized grid by propagating a random(ish), non-self-intersecting path through it. Since the odds against that are pretty high, Walk is more like a movie of a computer painting itself into a corner over and over. Try changing the step pattern!
     </div>
   </div>
 </body>
