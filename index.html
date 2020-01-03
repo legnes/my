@@ -57,6 +57,11 @@
     .bold {
       font-weight: bold;
     }
+    .normal-text {
+      display: inline-block;
+      font: inherit;
+      margin: 0;
+    }
     @keyframes wiggle {
       to { transform: scale(1.01,3); }
     }
@@ -67,7 +72,7 @@
     <div class="flex flex-row row-medium row-wiggle">
       <div class="bold row-label">
         <img class="image-small" src="assets/thumb_s.png" alt="" />
-        sam engel
+        <h1 class="normal-text">sam engel</h1>
       </div>
       <button class="link-button" onclick="toggleVisibility.call(this)">info</button>
       <a title="whaaat?">live project</a>
