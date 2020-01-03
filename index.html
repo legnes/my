@@ -1,9 +1,10 @@
-<html>
+<html lang="en">
 <head>
+  <link rel="shortcut icon" type="image/png" href="assets/s.png"/>
   <title>sam</title>
   <script type="text/javascript">
     function toggleVisibility() {
-      var dropdownContent = this.parentNode.parentNode.getElementsByClassName('dropdown-content')[0].classList.toggle('hidden');
+      var dropdownContent = this.parentNode.parentNode.getElementsByClassName('dropdown-content')[0].classList.toggle('visually-hidden');
     }
   </script>
   <style>
@@ -36,12 +37,22 @@
     .image-medium {
       height: 20rem;
     }
-    .clickable {
+    .link-button {
       color: blue;
       cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      font: inherit;
     }
-    .hidden {
-      display: none;
+    .visually-hidden {
+      position: absolute !important;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+      clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+      clip: rect(1px, 1px, 1px, 1px);
+      white-space: nowrap; /* added line */
     }
     .bold {
       font-weight: bold;
@@ -51,153 +62,153 @@
     }
   </style>
 </head>
-<body>
-  <div>
+<body><main>
+  <section><div>
     <div class="flex flex-row row-medium row-wiggle">
       <div class="bold row-label">
-        <img class="image-small" src="assets/thumb_s.png" />
+        <img class="image-small" src="assets/thumb_s.png" alt="" />
         sam engel
       </div>
-      <a class="clickable" onclick="toggleVisibility.call(this)">info</a>
+      <button class="link-button" onclick="toggleVisibility.call(this)">info</button>
       <a title="whaaat?">live project</a>
       <a title="hi mom and dad!">source</a>
     </div>
-    <div class="dropdown-content hidden">
+    <div class="dropdown-content visually-hidden">
       I'm a software engineer based in new york city you can reach me at samuel.d.engel@gmail.com you can find some things I've made on this web page!
     </div>
-  </div>
-  <div>
+  </div></section>
+  <section><div>
     <div class="flex flex-row row-medium row-wiggle">
       <div class="row-label">
-        <img class="image-small" src="assets/thumb_folds.png" />
+        <img class="image-small" src="assets/thumb_folds.png" alt="" />
         folds
       </div>
-      <a class="clickable" onclick="toggleVisibility.call(this)">info</a>
+      <button class="link-button" onclick="toggleVisibility.call(this)">info</button>
       <a href="https://legnes.github.io/folds">live project</a>
       <a href="https://github.com/legnes/folds">source</a>
     </div>
-    <div class="dropdown-content hidden">
+    <div class="dropdown-content visually-hidden">
       <div>
-        <img class="image-medium" src="assets/folds1.jpg"/>
+        <img class="image-medium" src="assets/folds1.jpg" alt="Folds app, showing the settings menu, including the variables visualizePass, paperSize, paperTexture, showUV, and others." />
       </div>
       Fold a paper with webgl/threejs. A simple edge detection pass tracks folds. For prettier creases, folds get a cheap gaussian blur using linear filtering before they are composited on top of previous creases and the base texture. Here are some patterns I made:
       <div>
-        <img class="image-medium" src="assets/folds2.jpg"/>
-        <img class="image-medium" src="assets/folds3.jpg"/>
-        <img class="image-medium" src="assets/folds4.jpg"/>
-        <img class="image-medium" src="assets/folds5.jpg"/>
+        <img class="image-medium" src="assets/folds2.jpg" alt="Folds app screencap" />
+        <img class="image-medium" src="assets/folds3.jpg" alt="Folds app screencap" />
+        <img class="image-medium" src="assets/folds4.jpg" alt="Folds app screencap" />
+        <img class="image-medium" src="assets/folds5.jpg" alt="Folds app screencap" />
       </div>
       The audio component is just an overtone series. Each fold adds/amplifies a simple sine/cosine wave to the note. The "amount" of paper creased (acting as a proxy for "frequency" of the crease on the unfolded paper) determines which partial gets added.
     </div>
-  </div>
-  <div>
+  </div></section>
+  <section><div>
     <div class="flex flex-row row-medium row-wiggle">
       <div class="row-label">
-        <img class="image-small" src="assets/thumb_check.png" />
+        <img class="image-small" src="assets/thumb_check.png" alt="" />
         checkerboard
       </div>
-      <a class="clickable" onclick="toggleVisibility.call(this)">info</a>
+      <button class="link-button" onclick="toggleVisibility.call(this)">info</button>
       <a href="https://legnes.github.io/checkerboard">live project</a>
       <a href="https://github.com/legnes/checkerboard">source</a>
     </div>
-    <div class="dropdown-content hidden">
+    <div class="dropdown-content visually-hidden">
       Checkerboard is a threejs/webgl take on a doodle I've done since I was a kid (it looked kind of like this):
       <div>
-        <img class="image-medium" src="assets/check1.jpg"/>
-        <img class="image-medium" src="assets/check2.jpg"/>
+        <img class="image-medium" src="assets/check1.jpg" alt="Sketch of a warped checkerboard on graph paper." />
+        <img class="image-medium" src="assets/check2.jpg" alt="Sketch of a warped checkerboard on graph paper." />
       </div>
       Initially conceived as an excuse to play with full-screen quads + frag shaders, Checkerboard grew into a small-scale particle system driven by a physical simulation running on the gpu. I had a blast working out a Runge-Kutta integrator and some simple lens optics!
       <div>
-        <img class="image-medium" src="assets/check3.jpg"/>
+        <img class="image-medium" src="assets/check3.jpg" alt="Checkerboard app, including an options menu with settings for particles, the checkerboard, gravity, the lens, and others." />
       </div>
     </div>
-  </div>
-  <div>
+  </div></section>
+  <section><div>
     <div class="flex flex-row row-medium row-wiggle">
       <div class="row-label">
-        <img class="image-small" src="assets/thumb_jueves.png" />
+        <img class="image-small" src="assets/thumb_jueves.png" alt="" />
         waves
       </div>
-      <a class="clickable" onclick="toggleVisibility.call(this)">info</a>
+      <button class="link-button" onclick="toggleVisibility.call(this)">info</button>
       <a href="https://legnes.github.io/jueves">live project</a>
       <a href="https://github.com/legnes/jueves">source</a>
     </div>
-    <div class="dropdown-content hidden">
+    <div class="dropdown-content visually-hidden">
       I built Waves for the Global Game Jam 2017. It's an expansion and variation on <a href="https://threejs.org/examples/#webgl_gpgpu_water">an existing threejs demo</a>. No small part of the ~40 hours jamming time went towards creating the canvas/key control scheme and tuning the simulation for gameplay (there was a nasty energy leak from the input model). I stuck with pretty simple shader logic but I ended up happy with the look!
       <div>
-        <img class="image-medium" src="assets/jueves1.jpg"/>
+        <img class="image-medium" src="assets/jueves1.jpg" alt="Waves app. A small ball floating on a bumpy, etherial surface." />
       </div>
     </div>
-  </div>
-  <div>
+  </div></section>
+  <section><div>
     <div class="flex flex-row row-medium row-wiggle">
       <div class="row-label">
-        <img class="image-small" src="assets/thumb_robotanical.png" />
+        <img class="image-small" src="assets/thumb_robotanical.png" alt="" />
         robotanical
       </div>
-      <a class="clickable" onclick="toggleVisibility.call(this)">info</a>
+      <button class="link-button" onclick="toggleVisibility.call(this)">info</button>
       <a href="https://legnes.github.io/robotanical">live project</a>
       <a href="https://github.com/legnes/robotanical">source</a>
     </div>
-    <div class="dropdown-content hidden">
+    <div class="dropdown-content visually-hidden">
       Ethan Edwards and I collaborated on Robotanical for ProcJam 2016, although busy schedules left it in a somewhat unfinished state. The idea was to cultivate a virtual garden of plants grown by Lindenmayer systems and parsed into svg by a turtle renderer. The version here demonstrates the core functionality by implementing a few well-known L-systems.
       <div>
-        <img class="image-medium" src="assets/robotanical1.jpg"/>
+        <img class="image-medium" src="assets/robotanical1.jpg" alt="Robotanical app. Several fractals and branching plant-like structures arranged in a grid." />
       </div>
     </div>
-  </div>
-  <div>
+  </div></section>
+  <section><div>
     <div class="flex flex-row row-medium row-wiggle">
       <div class="row-label">
-        <img class="image-small" src="assets/thumb_walk.png" />
+        <img class="image-small" src="assets/thumb_walk.png" alt="" />
         walk
       </div>
-      <a class="clickable" onclick="toggleVisibility.call(this)">info</a>
+      <button class="link-button" onclick="toggleVisibility.call(this)">info</button>
       <a href="https://legnes.github.io/walk">live project</a>
       <a href="https://github.com/legnes/walk">source</a>
     </div>
-    <div class="dropdown-content hidden">
+    <div class="dropdown-content visually-hidden">
       Walk is an animation/experiment that attempts to fill a discretized grid by propagating a random(ish), non-self-intersecting path through it. Since the odds against that are pretty high, Walk is more like a movie of a computer painting itself into a corner over and over. Try changing the step pattern!
       <div>
-        <img class="image-medium" src="assets/walk1.jpg"/>
+        <img class="image-medium" src="assets/walk1.jpg" alt="Walk app. Continents of pink pixels on a white background sit above the numbers 8, 4, 2, and an icon of a chess knight." />
       </div>
     </div>
-  </div>
-  <div>
+  </div></section>
+  <section><div>
     <div class="flex flex-row row-medium row-wiggle">
       <div class="row-label">
-        <img class="image-small" src="assets/thumb_phenomenol.png" />
+        <img class="image-small" src="assets/thumb_phenomenol.png" alt="" />
         phenomenol
       </div>
-      <a class="clickable" onclick="toggleVisibility.call(this)">info</a>
+      <button class="link-button" onclick="toggleVisibility.call(this)">info</button>
       <a href="https://legnes.github.io/phenomenol">live project</a>
       <a>source</a>
     </div>
-    <div class="dropdown-content hidden">
+    <div class="dropdown-content visually-hidden">
       I should probably explain the controls to you now. When I made Phenomenol back in 2014, I wanted it to be a sort of 3d line rider. There are two third-person points of view from which you can draw platforms in the space (mouse to draw, z to toggle pov). While in this drawing mode, you can control (using wasd) a marker that determines how far away from the camera the platforms will be placed. The idea is to place platforms so that the first-person character (wasd + mouse) can, by traversing them, collect the spinning cubes around the level. If you run out of platforms, don't worry; in first-person mode you can shoot (lmb) projectiles to collect/recall them. Last thing: those blue boxes on the ground in each corner will launch you into the air, which can be helpful. Phenomenol came out a tedious and unforgiving game, but if you approach it with patience it ~can~ be (strangely) compelling.
       NB: Phenomenol was original made in a much older version of unity, and rebuilding it for the post-flash era introduced some strangeness. Then again, it was pretty strange to begin with...
       <div>
-        <img class="image-medium" src="assets/phenomenol1.jpg"/>
+        <img class="image-medium" src="assets/phenomenol1.jpg" alt="Phenomenol game. Neon platforms float in a stark drab room." />
       </div>
     </div>
-  </div>
-  <div>
+  </div></section>
+  <section><div>
     <div class="flex flex-row row-medium row-wiggle">
       <div class="row-label">
-        <img class="image-small" src="assets/thumb_eprnd.png" />
+        <img class="image-small" src="assets/thumb_eprnd.png" alt="" />
         epr&d
       </div>
-      <a class="clickable" onclick="toggleVisibility.call(this)">info</a>
+      <button class="link-button" onclick="toggleVisibility.call(this)">info</button>
       <a href="https://legnes.github.io/eprnd">live project</a>
       <a>source</a>
     </div>
-    <div class="dropdown-content hidden">
+    <div class="dropdown-content visually-hidden">
       For the Global Game Jam 2014, I teamed up with Ethan Edwards to make EPR&D. There's always a theme for GGJ and in 2014 it was something about what we see not being what really is or...I don't remember. But I'd had this idea in my head for a while about a game whose mechanic only works when you can't see it work, and we decided to go with that.
       NB: This is a rebuild of an old unity project and as such may have even more bugs than it did originally.
       <div>
-        <img class="image-medium" src="assets/eprnd1.jpg"/>
+        <img class="image-medium" src="assets/eprnd1.jpg" alt="EPRnD game. An eyeball, a computer, walls, and a box sitting on a computer keyboard." />
       </div>
     </div>
-  </div>
-</body>
+  </div></section>
+</main></body>
 </html>
