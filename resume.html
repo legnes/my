@@ -1,0 +1,354 @@
+<!-- RESUME -->
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  body {
+    font-family: sans-serif;
+  }
+
+  h1, h2 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-weight: lighter;
+  }
+
+  h3, p , li {
+    font-size: 16px;
+  }
+
+  li {
+    margin: 4px 0;
+  }
+
+  * {
+    margin: 0px;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  @media print {
+    body {
+      width: 8.5in;
+      height: 11in;
+      padding: 1in 1in 1in 0.25in;
+    }
+
+    h1, h2 {
+      font-size: 18px;
+    }
+
+    h3, p , li {
+      font-size: 16px;
+    }
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  .column-left {
+    width: 2.75in;
+    flex-shrink: 0;
+    margin-right: 20px;
+  }
+
+  .column-left * {
+    width: 100%;
+    text-align: right;
+  }
+
+  .column-right {
+    flex-grow: 1;
+  }
+
+  .section-item {
+    width: 100%;
+    margin-bottom: 20px
+  }
+
+</style>
+</head>
+<body>
+
+  <!-- personal info -->
+  <section>
+    <div class="row">
+      <div class="column-left">
+        <h1>Samuel Engel</h1>
+      </div>
+      <div class="column-right">
+        <p>he/him/his</p>
+      </div>
+      </div>
+    </div>
+    <div class="section-item">
+      <div class="row">
+        <div class="column-left">
+          <p>443.812.6301</p>
+          <p>Queens, NY</p>
+        </div>
+        <div class="column-right">
+          <p>samuel.d.engel@gmail.com</p>
+          <p>Personal projects: <a href="https://legnes.github.io/my">legnes.github.io/my</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="section-item">
+      <div class="row">
+        <div class="column-left">
+          <h3>A sentence about me</h3>
+        </div>
+        <div class="column-right">
+          <p>I'm a software engineer with a focus on creative audiovisual, spatial, and scientific tools and experiences.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- education & skills -->
+  <section>
+    <div class="row">
+      <div class="column-left">
+        <h2>Education and Skills</h2>
+      </div>
+    </div>
+    <div class="section-item">
+      <div class="row">
+        <div class="column-left">
+          <h3>Columbia University</h3>
+          <p>New York, NY</p>
+        </div>
+        <div class="column-right">
+          <p>B.A. in Chemical Physics, 2014</p>
+          <p>Honors: Senior marshal, Dean's list 2011 - 2013</p>
+        </div>
+      </div>
+    </div>
+    <div class="section-item">
+      <div class="row">
+        <div class="column-left">
+          <h3>Programming Experience</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column-left">
+          <p>Languages</p>
+          <p>Technologies</p>
+        </div>
+        <div class="column-right">
+          <p>Javascript, GLSL, Julia, C#, Python, C, Java</p>
+          <p>Node.js, React, Mithril.js, AngularJS, three.js, Unity, ASP.NET</p>
+        </div>
+      </div>
+    </div>
+    <!-- NOTE: need something else here? -->
+  </section>
+
+  <!-- employment -->
+  <section>
+    <div class="row">
+      <div class="column-left">
+        <h2>Employment and Research</h2>
+      </div>
+    </div>
+
+    <div class="section-item">
+      <div class="row">
+        <div class="column-left">
+          <h3>CBRE Build (formerly Floored)</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column-left">
+          <p>2019 - present</p>
+          <p>2015 - 2019</p>
+        </div>
+        <div class="column-right">
+          <p>Senior Software Engineer,</p>
+          <p>Software Engineer</p>
+          <ul>
+            <li>Built web apps, testing, and documentation as part of a small tech-minded team inside the world's largest commercial real estate services company.</li>
+            <li>Nurtured our proprietary WebGL rendering engine. Collaborated across teams to discover, define, and realize artist features, developer tooling, and quality improvements.</li>
+            <li>Led development of a supplemental WebGL rendering pipeline. Scoped, researched, and deployed feature. Set quarterly objectives and promoted release.</li>
+            <li>Presented experimental features and case studies both internally and externally, including a Node.js server memory leak, real-time volumetric clouds, React performance profiling, temporal depth of field, and screen space reflections.</li>
+            <li>Contributed full-stack solutions for multiple products, from svg polygon manipulation in Mithril.js to resource fetching management and intra-app workflows in Node.js.</li>
+            <!-- <li>Ran internal graphics literature club.</li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-item">
+      <div class="row">
+        <div class="column-left">
+          <h3>Three Byte Intermedia</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column-left">
+          <p>2014 - 2015</p>
+        </div>
+        <div class="column-right">
+          <p>Software Developer</p>
+          <ul>
+            <li>Built web portals, show control systems, and iOS apps at a small artist- and museum-oriented software shop.</li>
+            <li>Engineered custom C# and ASP.NET robotics museum exhibit, including cross-platform UX integration and a novel collision avoidance scheme. Supported exhibit software through fabrication, installation, staff training, and troubleshooting.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-item">
+      <div class="row">
+        <div class="column-left">
+          <h3>Columbia University Chemistry</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column-left">
+          <p>2013 - 2014</p>
+        </div>
+        <div class="column-right">
+          <p>Angelo Cacciuto physical chemistry lab</p>
+          <ul>
+            <li>Modeled vesicle membrane and polymer systems using Monte Carlo methods.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-item">
+      <div class="row">
+        <div class="column-left">
+          <h3>WKCR-FM NY Radio Station</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column-left">
+          <p>2012 - 2013</p>
+        </div>
+        <div class="column-right">
+          <p>Station Manager</p>
+          <ul>
+            <li>Oversaw operations of full-time radio station founded in 1941.</li>
+            <li>Led staff of 15 as well as dozens of volunteers.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column-left">
+          <p>2011 - 2014</p>
+        </div>
+        <div class="column-right">
+          <p>Jazz, funk, soul DJ</p>
+        </div>
+      </div>
+    </div>
+
+  <!-- publications & talks -->
+  <section>
+    <div class="row">
+      <div class="column-left">
+        <h2>Publications and Talks</h2>
+      </div>
+    </div>
+    <div class="section-item">
+      <div class="row">
+        <div class="column-left">
+          <p>2018</p>
+        </div>
+        <div class="column-right">
+          <p><span class="bold">Presenter</span>, <a href="https://www.meetup.com/nodejs/events/252718152/">"Leaky Pipes in Build 3D"</a>, NYC Nodejs meetup</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column-left">
+          <p>2015</p>
+        </div>
+        <div class="column-right">
+          <p>A. Levy, C. Keitel, <span class="bold">S. Engel</span> and J. McLurkin, "<a href="https://ieeexplore.ieee.org/abstract/document/7138974">The Extended Velocity Obstacle and applying ORCA in the real world</a>," 2015 IEEE International Conference on Robotics and Automation (ICRA), Seattle, WA, 2015, pp. 16-22.</p>
+        </div>
+      </div>
+      <!-- <div class="row">
+        <div class="column-left">
+          <p>2011</p>
+        </div>
+        <div class="column-right">
+          <p>O'Quin, K. E, Smith, D., Naseer, Z., Schulte, J., <span class="bold">Engel, S. D</span>, Loh, Y. E, Streelman, J. T, Boore, J. L, Carleton, K. L (2011). <a href="http://escholarship.org/uc/item/8bf6m15p">Divergence in cis-regulatory sequences surrounding the opsin gene arrays of African cichlid fishes</a>. BMC Evolutionary Biology, 11(1).</p>
+        </div>
+      </div> -->
+    </div>
+  </section>
+
+<!--
+    <div class="section-item">
+      <div class="row">
+        <div class="column-left">
+          <h3>Columbia University Chemical Engineering</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column-left">
+          <p>Summer 2012</p>
+        </div>
+        <div class="column-right">
+          <p>Jeffrey Koberstein chemical engineering lab</p>
+          <ul>
+            <li>Examined functionality concentration in photochemical cross-linking of thin-film polymer systems using quantitative Gel Permeation Chromatography.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-item">
+      <div class="row">
+        <div class="column-left">
+          <h3>University of Maryland Training and Research Experiences in Nonlinear Dynamics</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column-left">
+          <p>Summer 2011</p>
+        </div>
+        <div class="column-right">
+          <p>Wolfgang Losert biophysics lab</p>
+          <ul>
+            <li>Probed the cytoskeletal structure of metastatic cancer cells by algorithmic image analysis of optical stretcher data using Particle Image Velocimetry.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-item">
+      <div class="row">
+        <div class="column-left">
+          <h3>University of Maryland Dept. of Biology</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column-left">
+          <p>Summer 2010</p>
+        </div>
+        <div class="column-right">
+          <p>Karen Carleton evolutionary biology lab</p>
+          <ul>
+            <li>Identified correlations between miRNA and opsin expression in cichlid fishes.</li>
+            <li>Publication at http://escholarship.org/uc/item/8bf6m15p.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+-->
+
+</section>
+
+</body>
+</html>
