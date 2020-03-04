@@ -44,6 +44,7 @@
       border: none;
       padding: 0;
       font: inherit;
+      text-decoration: underline;
     }
     .visually-hidden {
       position: absolute !important;
@@ -68,6 +69,8 @@
   </style>
 </head>
 <body><main>
+
+  <!-- about me -->
   <section><div>
     <div class="flex flex-row row-medium row-wiggle">
       <div class="bold row-label">
@@ -78,10 +81,32 @@
       <a title="whaaat?">live project</a>
       <a title="hi mom and dad!">source</a>
     </div>
-    <div class="dropdown-content visually-hidden">
-      I'm a software engineer based in new york city you can reach me at samuel.d.engel@gmail.com you can find some things I've made on this web page!
+    <div class="dropdown-content">
+      I'm a software engineer I use he/him/his pronouns you can reach me at samuel.d.engel@gmail.com you can find some things I've made on this web page!
     </div>
   </div></section>
+
+  <!-- freecell -->
+  <section><div>
+    <div class="flex flex-row row-medium row-wiggle">
+      <div class="row-label">
+        <img class="image-small" src="assets/thumb_freecell.png" alt="" />
+        mom's freecell
+      </div>
+      <button class="link-button" onclick="toggleVisibility.call(this)">info</button>
+      <a href="https://legnes.github.io/freecell">live project</a>
+      <a href="https://github.com/legnes/freecell">source</a>
+    </div>
+    <div class="dropdown-content visually-hidden">
+      I made this freecell for my mom, who used to play religiously and who recently complained to me that she couldn't find any simple, minimal versions online. I immediately became obsessed with it. My implementation owes its chassis and much of its polish to a <a href="https://github.com/deck-of-cards/deck-of-cards">Deck of Cards</a> javascript library, which I overrode and extended to create the gameplay. There is a challenge and a pleasure in adapting someone else's code. I had fun trying to extrapolate data structures for the cascades, foundations, and free cells from the library's notion of a deck.
+      <div>
+        <img class="image-medium" src="assets/freecell1.png" alt="Freecell app screencap" />
+        <img class="image-medium" src="assets/freecell2.png" alt="Freecell app screencap" />
+      </div>
+    </div>
+  </div></section>
+
+  <!-- folds -->
   <section><div>
     <div class="flex flex-row row-medium row-wiggle">
       <div class="row-label">
@@ -96,16 +121,18 @@
       <div>
         <img class="image-medium" src="assets/folds1.jpg" alt="Folds app, showing the settings menu, including the variables visualizePass, paperSize, paperTexture, showUV, and others." />
       </div>
-      Fold a paper with webgl/threejs. A simple edge detection pass tracks folds. For prettier creases, folds get a cheap gaussian blur using linear filtering before they are composited on top of previous creases and the base texture. Here are some patterns I made:
+      Fold a paper with webgl/threejs. A simple edge detection pass tracks folds. For prettier creases, folds get a cheap separable gaussian blur before they are composited on top of previous creases and the base texture. Here are some patterns I made:
       <div>
         <img class="image-medium" src="assets/folds2.jpg" alt="Folds app screencap" />
         <img class="image-medium" src="assets/folds3.jpg" alt="Folds app screencap" />
         <img class="image-medium" src="assets/folds4.jpg" alt="Folds app screencap" />
         <img class="image-medium" src="assets/folds5.jpg" alt="Folds app screencap" />
       </div>
-      The audio component is just an overtone series. Each fold adds/amplifies a simple sine/cosine wave to the note. The "amount" of paper creased (acting as a proxy for "frequency" of the crease on the unfolded paper) determines which partial gets added.
+      The audio component is just an overtone series. Each fold adds/amplifies a simple sine/cosine wave to the note or chord. The "amount" of paper creased (acting as a proxy for "frequency" of the crease on the unfolded paper) determines which partial gets added.
     </div>
   </div></section>
+
+  <!-- chekerboard -->
   <section><div>
     <div class="flex flex-row row-medium row-wiggle">
       <div class="row-label">
@@ -117,7 +144,7 @@
       <a href="https://github.com/legnes/checkerboard">source</a>
     </div>
     <div class="dropdown-content visually-hidden">
-      Checkerboard is a threejs/webgl take on a doodle I've done since I was a kid (it looked kind of like this):
+      Checkerboard is a threejs/webgl take on a doodle I've done since I was a kid (it looks like this):
       <div>
         <img class="image-medium" src="assets/check1.jpg" alt="Sketch of a warped checkerboard on graph paper." />
         <img class="image-medium" src="assets/check2.jpg" alt="Sketch of a warped checkerboard on graph paper." />
@@ -128,6 +155,8 @@
       </div>
     </div>
   </div></section>
+
+  <!-- waves -->
   <section><div>
     <div class="flex flex-row row-medium row-wiggle">
       <div class="row-label">
@@ -145,6 +174,8 @@
       </div>
     </div>
   </div></section>
+
+  <!-- l systems -->
   <section><div>
     <div class="flex flex-row row-medium row-wiggle">
       <div class="row-label">
@@ -162,6 +193,8 @@
       </div>
     </div>
   </div></section>
+
+  <!-- walk -->
   <section><div>
     <div class="flex flex-row row-medium row-wiggle">
       <div class="row-label">
@@ -179,6 +212,8 @@
       </div>
     </div>
   </div></section>
+
+  <!-- phenomenol -->
   <section><div>
     <div class="flex flex-row row-medium row-wiggle">
       <div class="row-label">
@@ -197,6 +232,8 @@
       </div>
     </div>
   </div></section>
+
+  <!-- eprnd -->
   <section><div>
     <div class="flex flex-row row-medium row-wiggle">
       <div class="row-label">
@@ -215,5 +252,6 @@
       </div>
     </div>
   </div></section>
+
 </main></body>
 </html>
