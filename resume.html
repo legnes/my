@@ -82,7 +82,11 @@
     body {
       width: 8.5in;
       height: 11in;
-      padding: 0.5in 1in 1in 1in;
+      padding: 0;
+    }
+
+    @page {
+      margin: 0.75in 1in;
     }
 
     h1 {
@@ -108,20 +112,20 @@
         <p>he/they</p>
       </div>
       <div class="flex flex-col">
-        <p><a href="https://www.linkedin.com/in/sam-engel-77b1761a4/">Linkedin</a></p>
+        <p><a href="https://www.linkedin.com/in/sam-engel-77b1761a4/">LinkedIn</a></p>
         <p><a href="https://legnes.github.io/my">legnes.github.io/my</a></p>
       </div>
     </div>
 
     <div class="flex flex-col inset">
       <div class="space-above">
-        <p>I'm a software engineer with a focus on creative audiovisual, spatial, and scientific tools. Also talk to me about cryptic crosswords, sewing and mending, rugby union, and single-reed instruments.</p>
+        <p>I'm a Software Engineer with a focus on creative audiovisual, spatial, and scientific tools. Also talk to me about cryptic crosswords, sewing and mending, rugby union, and single-reed instruments.</p>
       </div>
       <div class="space-above">
         <h3>Technical skills</h3>
         <ul>
           <li><span class="bold">Programming:</span> Typescript, Python, C#, Rust, Julia, C, Java</li>
-          <li><span class="bold">Technologies:</span> WebGL, WebGPU, Node.js, React, three.js, Unity, esbuild, Heroku, CouchDB, Postgres, ASP.NET</li>
+          <li><span class="bold">Technologies:</span> WebGL, WebGPU, Node.js, React, three.js, Unity, esbuild, PyTorch, Heroku, CouchDB, Postgres, ASP.NET</li>
           <li><span class="bold">Practices:</span> Git, Code review, Design documents, Project management</li>
           <li><span class="bold">Open source contributions:</span> <a href="https://github.com/crosshare-org/crosshare">Crosshare</a>, <a href="https://github.com/tsherif/webgpu-examples">WebGPU Examples</a></li>
           <li><span class="bold">Training:</span> <i>Reinforcement Learning 1 and 2</i>, Delta Academy; <i>Compute Shaders in Unity</i>, Arsiliath</li>
@@ -141,7 +145,8 @@
         <p class="bold">2010–2014</p>
       </div>
       <ul>
-        <li><p>B.A. in Chemical Physics (CGPA: 3.6845)</p></li>
+        <li><p>B.A. in Chemical Physics</p></li>
+        <!-- <li><p>B.A. in Chemical Physics (CGPA: 3.6845)</p></li> -->
         <li><p>Honors: Senior marshal, Dean's list 2011–2013</p></li>
         <li><p>Relevant coursework: Computer Animation, Introduction to Quantum Computing, Data Structures in Java, Introduction to Computer Science</p></li>
         <li><p>Relevant coursework: Quantum Mechanics I, Electromagnetic Waves & Optics, Making & Breaking Codes, Electricity & Magnetism, Linear Algebra, Calculus IV</p></li>
