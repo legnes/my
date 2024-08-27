@@ -2,53 +2,24 @@
 <head>
   <link rel="shortcut icon" type="image/png" href="assets/s.png"/>
   <title>sam</title>
-  <script type="text/javascript">
-    function toggleVisibility() {
-      var dropdownContent = this.parentNode.parentNode.getElementsByClassName('dropdown-content')[0].classList.toggle('visually-hidden');
-    }
-  </script>
   <style>
     body {
       font-size: 20px;
+      padding: 0 2rem;
+      text-size-adjust: 200%;
     }
-    .flex {
-      display: flex;
+    .summary-row {
+      display: inline-grid;
+      grid-template-columns: 30% 20% 20% 20%;
+      align-items: baseline;
       justify-content: space-between;
-      align-items: center;
+      width: 90%;
+      cursor: default;
     }
-    .flex-row {
-      flex-direction: row;
-      transform-origin: left;
+    .summary-row:hover {
+      animation: wiggle 10s alternate infinite ease-in-out 4s;
     }
-    .flex-column {
-      flex-direction: column;
-    }
-    .flex-wrap {
-      flex-wrap: wrap;
-      justify-content: flex-start;
-    }
-    .row-medium {
-      width: 60%;
-    }
-    .row-wiggle:hover {
-      animation: wiggle 10s alternate infinite ease-in-out;
-    }
-    .row-label {
-      width: 30%;
-    }
-    .dropdown-content {
-      margin: 0.5rem 1.5rem 1rem 1.5rem;
-    }
-    .image-tiny {
-      height: 1rem;
-    }
-    .image-small {
-      height: 10rem;
-    }
-    .image-medium {
-      height: 20rem;
-    }
-    .link-button {
+    .info-button {
       color: blue;
       cursor: pointer;
       background: none;
@@ -57,21 +28,43 @@
       font: inherit;
       text-decoration: underline;
     }
-    .visually-hidden {
-      position: absolute !important;
-      height: 1px;
-      width: 1px;
-      overflow: hidden;
-      clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-      clip: rect(1px, 1px, 1px, 1px);
-      white-space: nowrap; /* added line */
+    .info-button:active {
+      pointer-events: none;
     }
-    .bold {
+    .gallery {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      transform-origin: left;
+      flex-wrap: wrap;
+    }
+    .gallery-item {
+      margin: 0 0 1rem 0;
+    }
+    .row-label {
+      width: 30%;
+    }
+    .dropdown-content {
+      margin: 0.5rem 1.5rem 1rem 1.5rem;
+    }
+    .image-thumb {
+      height: 2rem;
+      width: auto;
+      transform: translate(0, 0.5rem);
+    }
+    .image-small {
+      height: 10rem;
+    }
+    .image-medium {
+      height: 20rem;
+    }
+    .inline {
+      display: inline;
+    }
+    h1 {
       font-weight: bold;
-    }
-    .normal-text {
-      display: inline-block;
-      font: inherit;
+      font-size: inherit;
       margin: 0;
     }
     .text-small {
@@ -85,62 +78,135 @@
 <body><main>
 
   <!-- about me -->
-  <section><div>
-    <div class="flex flex-row row-medium row-wiggle">
-      <div class="bold row-label">
-        <img loading="eager" class="image-tiny" src="assets/thumb_s.png" alt="" />
-        <h1 class="normal-text">sam engel</h1>
+  <details open>
+    <summary>
+      <div class="summary-row">
+        <div>
+          <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_s.png" alt="" />
+          <h1 class="inline">sam engel</h1>
+        </div>
+        <span class="info-button">info</span>
+        <span>live project</span>
+        <span>source</span>
       </div>
-      <button class="link-button" onclick="toggleVisibility.call(this)">info</button>
-      <span>live project</span>
-      <span>source</span>
-    </div>
+    </summary>
     <div class="dropdown-content">
-      I'm a software engineer. You can reach me at samuel.d.engel@gmail.com. I use he/him/his pronouns. You can find some things I've made on this web page!
+      I'm a software engineer with a focus on creative audiovisual, spatial, and scientific tools. You can reach me at <a href="mailto:samuel.d.engel@gmail.com">samuel.d.engel@gmail.com</a>. I use he/they pronouns. You can find some things I've made on this web page!
     </div>
-  </div></section>
+  </details>
 
   <!-- web sketches -->
-  <section><div>
-    <div class="flex flex-row row-medium row-wiggle">
-      <div class="row-label">
-        <img loading="eager" class="image-tiny" src="assets/thumb_websketches.png" alt="" />
-        web sketches
+  <details>
+    <summary>
+      <div class="summary-row">
+        <div>
+          <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_websketches.png" alt="" />
+          web sketches
+        </div>
+        <span class="info-button">info</span>
+        <a href="https://legnes.github.io/web-sketches">live project</a>
+        <a href="https://github.com/legnes/web-sketches">source</a>
       </div>
-      <button class="link-button" onclick="toggleVisibility.call(this)">info</button>
-      <a href="https://legnes.github.io/web-sketches">live project</a>
-      <a href="https://github.com/legnes/web-sketches">source</a>
+    </summary>
+    <div class="dropdown-content">
+      Experiments in graphics and gpu compute for the web. Proofs of concept, paper/blog implementations, small-scale demos, etc. written using WebGL and WebGPU.
+      <div class="gallery">
+        <figure class="gallery-item">
+          <img loading="lazy" class="image-medium" src="assets/websketches1.jpg" alt="Grid of Stanford bunnies blurred around a focal distance" />
+          <figcaption class="text-small">WebGPU depth of field using camera jitter</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img loading="lazy" class="image-medium" src="assets/websketches2.jpg" alt="Primordial particle system looking like a microscope slide" />
+          <figcaption class="text-small">WebGPU primordial particle system</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img loading="lazy" class="image-medium" src="assets/websketches3.jpg" alt="Fluid-like simulation" />
+          <figcaption class="text-small">WebGL reintegration tracking</figcaption>
+        </figure>
+      </div>
     </div>
-    <div class="dropdown-content visually-hidden">
-      Web Sketches is the place I've been putting experiments in graphics and compute for the web. Most of these are proofs of concept, paper/blog implementations, and small-scale demos. From WebGL to WebGPU, find it here.
+  </details>
+
+  <!-- weekend raytracer -->
+  <details>
+    <summary>
+      <div class="summary-row">
+        <div>
+          <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_wkrt.png" alt="" />
+          weekend raytracer
+        </div>
+        <span class="info-button">info</span>
+        <span>live project</span>
+        <a href="https://github.com/legnes/weekend-raytracer-rs">source</a>
+      </div>
+    </summary>
+    <div class="dropdown-content">
+      A rust implementation of Peter Shirley, Trevor David Black, and Steve Hollasch's <a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html">Ray Tracing in One Weekend</a>, with help from Daniel Busch's <a href="https://heyjuvi.github.io/raytracinginrust/">rust version of the book</a>. I added on a few extras, including image-based lighting, high dynamic range, direct lighting with shadow rays, parallelization, and a BVH based on <a href="https://jacco.ompf2.com/2022/04/13/how-to-build-a-bvh-part-1-basics/">this blog post</a> by Jacco Bikker. I also experimented with a surface area heuristic and sorted traversal for the BVH.
+      <div class="gallery">
+        <figure class="gallery-item">
+          <img class="image-small" src="assets/wkrt2.jpg" alt="A mix of large and small spheres with different colors and reflectivities on a gray background"></img>
+          <figcaption class="text-small">Multiple directional lights, shadows</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img class="image-small" src="assets/wkrt3.jpg" alt="A mix of large and small spheres, seen from afar, reflecting a sunset by the sea"></img>
+          <figcaption class="text-small">Image-based lighting</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img class="image-small" src="assets/wkrt4.jpg" alt="A mix of large and small spheres reflecting a sunset"></img>
+          <figcaption class="text-small">Image-based lighting</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img class="image-small" src="assets/wkrt1.jpg" alt="Three spheres: one glass, one matte, and one metallic, on a yellow ground. The left half of the image has duller colors than the right half."></img>
+          <figcaption class="text-small">Tonemapper comparison (Uncharted 2 vs. approximate ACES)</figcaption>
+        </figure>
+      </div>
+    </div>
+  </details>
+
+  <!-- semaphore telegraph -->
+  <details>
+    <summary>
+      <div class="summary-row">
+        <div>
+          <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_telegraph.png" alt="" />
+          semaphore telegraph
+        </div>
+        <span class="info-button">info</span>
+        <a href="https://legnes.github.io/semaphore-telegraph">live project</a>
+        <a href="https://github.com/legnes/semaphore-telegraph">source</a>
+      </div>
+    </summary>
+    <div class="dropdown-content">
+      At the end of the 18th century, engineers in France constructed a network of <a href="https://en.wikipedia.org/wiki/Optical_telegraph">optical telegraphs</a>, allowing messages to be transmitted hundreds of miles in a matter of minutes. As a production tool for the short film <a href="https://f.io/hMAeqFMa">Telegraph Tower</a>, I wrote a blender script to programatically animate a model of a sempahore telegraph transmitting an arbitrary input string.
       <div>
-        <img loading="lazy" class="image-medium" src="assets/websketches1.jpg" alt="Grid of Stanford bunnies blurred around a focal distance" />
-        <img loading="lazy" class="image-medium" src="assets/websketches2.jpg" alt="Primordial particle system looking like a microscope slide" />
-        <img loading="lazy" class="image-medium" src="assets/websketches3.jpg" alt="Fluid-like simulation" />
+        <video class="image-medium" controls><source src="assets/telegraph1.webm"></video>
+      </div>
+      I also put together a simple web app version of the tool with additional animation options:
+      <div>
+        <img loading="lazy" class="image-medium" src="assets/telegraph2.jpg" alt="The semaphore telegraph web app" />
       </div>
     </div>
-  </div></section>
+  </details>
 
   <!-- sdf text -->
-  <section><div>
-    <div class="flex flex-row row-medium row-wiggle">
-      <div class="row-label">
-        <img loading="eager" class="image-tiny" src="assets/thumb_sdf.png" alt="" />
-        sdf text
+  <details>
+    <summary>
+      <div class="summary-row">
+        <div>
+          <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_sdf.png" alt="" />
+          sdf text
+        </div>
+        <span class="info-button">info</span>
+        <a href="https://legnes.github.io/sdf-text">live project</a>
+        <a href="https://github.com/legnes/sdf-text">source</a>
       </div>
-      <button class="link-button" onclick="toggleVisibility.call(this)">info</button>
-      <a href="https://legnes.github.io/sdf-text">live project</a>
-      <a href="https://github.com/legnes/sdf-text">source</a>
-    </div>
-    <div class="dropdown-content visually-hidden">
-      SDF Text is a small webgl and javascript tool for turning text into customizable word art. You know, word art, like you might have used on your 5th grade poetry assignment:
-      <div>
-        <img loading="lazy" class="image-medium" src="assets/wordart.jpg" alt="My 5th grade poetry assigment featuring bad word art" />
-      </div>
+    </summary>
+    <div class="dropdown-content">
+      SDF Text is a small webgl and javascript tool for turning text into customizable word art:
       <div>
         <img loading="lazy" class="image-medium" src="assets/sdfs1.jpg" alt="The sdf-text app. On the left are a number of font settings. On the right, the words 'sdf word art!' appear in two tone pink and white with a dithered halo." />
       </div>
-      I owe a lot of the inspiration behind SDF Text to <a href="https://steamcdn-a.akamaihd.net/apps/valve/2007/SIGGRAPH2007_AlphaTestedMagnification.pdf">Valve's 2007 paper on SDFs</a> and <a href="https://thebookofshaders.com/">The Book Of Shaders's</a> practical write-up of shapes and shaping. This project was a treat from start to finish! Whenever I got tired of writing javascript I could play around in the live glsl shader editor to come up with new rendering styles. At some point I may revisit this to replace the old cpu-side SDF generation with a gpu-side jump flood approach, but overall I'm pleased with how it came out. Here are some of my favorite results:
+      It includes a live glsl shader editor that you can use to come up with new styles. I owe much of the inspiration and logic to <a href="https://steamcdn-a.akamaihd.net/apps/valve/2007/SIGGRAPH2007_AlphaTestedMagnification.pdf">Valve's 2007 paper on SDFs</a>, <a href="https://cs.brown.edu/people/pfelzens/papers/dt-final.pdf">Pedro Felzenszwalb and Dan Huttenlocher's paper on calculating SDFs</a>, and <a href="https://thebookofshaders.com/">The Book Of Shaders's</a> practical write-up of shapes and shaping. At some point I may revisit this to replace the old cpu-side SDF generation with a gpu-side jump flood approach, but overall I'm pleased with how it came out! Here are some of my favorite results:
       <div>
         <img loading="lazy" class="image-small" src="assets/sdfs2.jpg" alt="The words 'type here!' dissolving into vertical lines" />
         <img loading="lazy" class="image-small" src="assets/sdfs3.jpg" alt="The word 'type' looking sort of like a bubble" />
@@ -149,112 +215,124 @@
         <img loading="lazy" class="image-small" src="assets/sdfs6.jpg" alt="The letters 'asdf' trailing horizontal icicle-like shapes" />
       </div>
     </div>
-  </div></section>
+  </details>
 
   <!-- crossword corpus -->
-  <section><div>
-    <div class="flex flex-row row-medium row-wiggle">
-      <div class="row-label">
-        <img loading="eager" class="image-tiny" src="assets/thumb_crosswords.png" alt="" />
-        crossword corpus
+  <details>
+    <summary>
+      <div class="summary-row">
+        <div>
+          <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_crosswords.png" alt="" />
+          crossword corpus
+        </div>
+        <span class="info-button">info</span>
+        <a href="https://xw-data.herokuapp.com">live project</a>
+        <a href="https://github.com/legnes/xw-data">source</a>
       </div>
-      <button class="link-button" onclick="toggleVisibility.call(this)">info</button>
-      <a href="https://xw-data.herokuapp.com">live project</a>
-      <a href="https://github.com/legnes/xw-data">source</a>
-    </div>
-    <div class="dropdown-content visually-hidden">
+    </summary>
+    <div class="dropdown-content">
       Crossword Corpus started as a complaint: why do words like ALOE, ERA, and OAT show up so often in crossword puzzles? It turned into a kind of blog/web app hybrid about language, data, and crossword puzzles.
       <div>
         <img loading="lazy" class="image-medium" src="assets/crosswords1.jpg" alt="A graph showing year-by-year usage of three crossword answers, SDI (peaks around 2000), DSL (peaks around 2011), and OMG (peaks around 2020)" />
         <img loading="lazy" class="image-medium" src="assets/crosswords2.jpg" alt="A heatmap of vowel usage in a 15x15 crossword grid" />
       </div>
-      Crossword Corpus was a truly full stack project. First of all, I needed data, so I put together a scraper in bash and collected two and a half decades of puzzles. To read them, I had to build a parser for <a href="https://code.google.com/archive/p/puz/wikis/FileFormat.wiki">.puz files</a>. Once I could actually interpret the puzzles, I ingested them into a postgres database behind a node/express web app on heroku. The app hosts blog pages, exposes an api for running data analysis, and serves the results into tables and graphs by way of plotlyjs and HTML CustomElements. Once I could run tests and visualize findings, it was finally time to read up on corpus linguistics and get some answers.
+      To get started, I put together a scraper in bash and collected two and a half decades of puzzles, then read them with a home-grown <a href="https://code.google.com/archive/p/puz/wikis/FileFormat.wiki">.puz file</a> parser. Once I could actually interpret the puzzles, I ingested them into a postgres database behind a node/express web app on heroku. The app hosts blog pages, exposes an api for running data analysis, and serves the results into tables and graphs by way of plotlyjs and HTML CustomElements. Once I could run tests and visualize findings, it was finally time to read up on corpus linguistics and get some answers.
       <div>
         <img loading="lazy" class="image-medium" src="assets/crosswords3.jpg" alt="A 2d histogram of crossword answers with x letters and y vowels" />
         <img loading="lazy" class="image-medium" src="assets/crosswords4.jpg" alt="A graph showing crossword answer births and deaths over time" />
       </div>
-      It's always great practice to build an app from the ground up. I used pretty standard technologies throughout, but there were still a couple of good surprises! I ran afoul of some fun data management problems, namely high network usage (brotli and gzip to the rescue), and large language corpora (better data structure efficiency helped). Also, I was happy to find that CustomElements and custom HTML events are a viable alternative to front-end frameworks. They worked great! Along the way I learned a lot about language, so give the blog a read if you're interested!
+      Along the way I ran afoul of some data management problems. Brotli and gzip helped with the high network usage, and better data structure efficiency improved the performance of the large language corpora I was working with. On the front-end, I was happy to find that CustomElements and custom HTML events are a viable alternative to bulkier frameworks. I learned a lot about language, so give the blog a read if you're interested!
     </div>
-  </div></section>
+  </details>
 
   <!-- arsiliath unity compute workshop -->
-  <section><div>
-    <div class="flex flex-row row-medium row-wiggle">
-      <div class="row-label">
-        <img loading="eager" class="image-tiny" src="assets/thumb_compute.png" alt="" />
-        arsiliath compute workshop
+  <details>
+    <summary>
+      <div class="summary-row">
+        <div>
+          <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_compute.png" alt="" />
+          arsiliath compute workshop
+        </div>
+        <span class="info-button">info</span>
+        <span>live project</span>
+        <span>source</span>
       </div>
-      <button class="link-button" onclick="toggleVisibility.call(this)">info</button>
-      <span>live project</span>
-      <span>source</span>
-    </div>
-    <div class="dropdown-content visually-hidden">
-      In December 2020 I took <a href="https://twitter.com/arsiliath">Arsiliath's</a> <a href="https://twitter.com/psychobiotik">workshop</a> on creating biology-inspired simulations using compute shaders in Unity. I've been increasingly excited to dive into the world of compute as it's seen more and more use across real-time 3d. In the workshop, I learned how to run compute shaders on their own and how to integrate them into a pipeline to dispatch other gpu operations. We implemented algorithms from the literature on cellular automata, reaction diffusion, physarum, primordial particle systems, flocking, etc. The gpu's sheer scalability combined with Arsiliath's guidance on artistic workflow made it easy to "discover" new patterns. Playing with variables, tweaking algorithms, and experimenting with rendering styles were a big part of the fun!
-      <div class="flex flex-row flex-wrap">
-        <span class="flex flex-column">
+    </summary>
+    <div class="dropdown-content">
+      In December 2020 I took <a href="https://twitter.com/arsiliath">Arsiliath's</a> <a href="https://arsiliath.gumroad.com/">workshop</a> on creating biology-inspired simulations using compute shaders in Unity. We implemented algorithms from the literature on cellular automata, reaction-diffusion, physarum, primordial particle systems, flocking, etc. Here are some of my favorite results:
+      <div class="gallery">
+        <figure class="gallery-item">
           <video class="image-medium" controls><source src="assets/compute1.webm"></video>
-          <span class="text-small">Reaction diffusion simulation</span>
-        </span>
-        <span class="flex flex-column">
+          <figcaption class="text-small">Reaction diffusion simulation</figcaption>
+        </figure>
+        <figure class="gallery-item">
           <video class="image-medium" controls><source src="assets/compute2.webm"></video>
-          <span class="text-small">Simple cyclic cellular automaton</span>
-        </span>
-        <span class="flex flex-column">
+          <figcaption class="text-small">Simple cyclic cellular automaton</figcaption>
+        </figure>
+        <figure class="gallery-item">
           <video class="image-medium" controls><source src="assets/compute3.webm"></video>
-          <span class="text-small">Diffusion-limited aggregation</span>
-        </span>
-        <span class="flex flex-column">
+          <figcaption class="text-small">Diffusion-limited aggregation</figcaption>
+        </figure>
+        <figure class="gallery-item">
           <video class="image-medium" controls><source src="assets/compute4.webm"></video>
-          <span class="text-small">Cellular automaton using "rule 388"</span>
-        </span>
-        <span class="flex flex-column">
+          <figcaption class="text-small">Cellular automaton using "rule 388"</figcaption>
+        </figure>
+        <figure class="gallery-item">
           <video class="image-medium" controls><source src="assets/compute5.webm"></video>
-          <span class="text-small">Three primordial particle systems</span>
-        </span>
-        <span class="flex flex-column">
+          <figcaption class="text-small">Three primordial particle systems</figcaption>
+        </figure>
+        <figure class="gallery-item">
           <video class="image-medium" controls><source src="assets/compute6.webm"></video>
-          <span class="text-small">Reaction diffusion algorithm visualized in 3d</span>
-        </span>
-        <span class="flex flex-column">
+          <figcaption class="text-small">Reaction diffusion algorithm visualized in 3d</figcaption>
+        </figure>
+        <figure class="gallery-item">
           <video class="image-medium" controls><source src="assets/compute7.webm"></video>
-          <span class="text-small">Primordial particle system in 3d</span>
-        </span>
+          <figcaption class="text-small">Primordial particle system in 3d</figcaption>
+        </figure>
       </div>
     </div>
-  </div></section>
+  </details>
 
-  <!-- freecell -->
-  <section><div>
-    <div class="flex flex-row row-medium row-wiggle">
-      <div class="row-label">
-        <img loading="eager" class="image-tiny" src="assets/thumb_freecell.png" alt="" />
-        mom's freecell
+  <!-- chekerboard -->
+  <details>
+    <summary>
+      <div class="summary-row">
+        <div>
+          <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_check.png" alt="" />
+          checkerboard
+        </div>
+        <span class="info-button">info</span>
+        <a href="https://legnes.github.io/checkerboard">live project</a>
+        <a href="https://github.com/legnes/checkerboard">source</a>
       </div>
-      <button class="link-button" onclick="toggleVisibility.call(this)">info</button>
-      <a href="https://legnes.github.io/freecell">live project</a>
-      <a href="https://github.com/legnes/freecell">source</a>
-    </div>
-    <div class="dropdown-content visually-hidden">
-      I made this freecell for my mom, who used to play religiously and who recently complained to me that she couldn't find any simple, minimal versions online. My implementation owes its chassis and much of its polish to a <a href="https://github.com/deck-of-cards/deck-of-cards">Deck of Cards</a> javascript library, which I overrode and extended to create the gameplay. There is a challenge and a pleasure in adapting someone else's code. I had fun trying to extrapolate data structures for the cascades, foundations, and free cells from the library's notion of a deck.
+    </summary>
+    <div class="dropdown-content">
+      Checkerboard is a threejs/webgl take on a doodle I've done since I was a kid (it looks like this):
       <div>
-        <img loading="lazy" class="image-medium" src="assets/freecell1.jpg" alt="Freecell app at the beginning of a game" />
-        <img loading="lazy" class="image-medium" src="assets/freecell2.jpg" alt="Freecell app after completing a game" />
+        <img loading="lazy" class="image-medium" src="assets/check1.jpg" alt="A warped checkerboard sketched on graph paper." />
+        <img loading="lazy" class="image-medium" src="assets/check2.jpg" alt="Several more warped checkerboards sketched on graph paper." />
+      </div>
+      Initially conceived as an excuse to play with shaders, Checkerboard grew into a small-scale particle system driven by a physical simulation running on the gpu. I had a blast working out a Runge-Kutta integrator and some simple lens optics!
+      <div>
+        <img loading="lazy" class="image-medium" src="assets/check3.jpg" alt="Checkerboard app, including an options menu with settings for particles, the checkerboard, gravity, the lens, and others." />
       </div>
     </div>
-  </div></section>
+  </details>
 
   <!-- folds -->
-  <section><div>
-    <div class="flex flex-row row-medium row-wiggle">
-      <div class="row-label">
-        <img loading="eager" class="image-tiny" src="assets/thumb_folds.png" alt="" />
-        folds
+  <details>
+    <summary>
+      <div class="summary-row">
+        <div>
+          <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_folds.png" alt="" />
+          folds
+        </div>
+        <span class="info-button">info</span>
+        <a href="https://legnes.github.io/folds">live project</a>
+        <a href="https://github.com/legnes/folds">source</a>
       </div>
-      <button class="link-button" onclick="toggleVisibility.call(this)">info</button>
-      <a href="https://legnes.github.io/folds">live project</a>
-      <a href="https://github.com/legnes/folds">source</a>
-    </div>
-    <div class="dropdown-content visually-hidden">
+    </summary>
+    <div class="dropdown-content">
       <div>
         <img loading="lazy" class="image-medium" src="assets/folds1.jpg" alt="Folds app. In the main window, a blue and pink square has a complex pattern of creases. On the right is a settings menu, including variables and commands for visualization and sonification." />
       </div>
@@ -267,128 +345,136 @@
       </div>
       The audio component is just an overtone series. Each fold adds/amplifies a simple sine/cosine wave to the note or chord. The "amount" of paper creased (acting as a proxy for "frequency" of the crease on the unfolded paper) determines which partial gets added.
     </div>
-  </div></section>
+  </details>
 
-  <!-- chekerboard -->
-  <section><div>
-    <div class="flex flex-row row-medium row-wiggle">
-      <div class="row-label">
-        <img loading="eager" class="image-tiny" src="assets/thumb_check.png" alt="" />
-        checkerboard
+  <!-- freecell -->
+  <details>
+    <summary>
+      <div class="summary-row">
+        <div>
+          <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_freecell.png" alt="" />
+          mom's freecell
+        </div>
+        <span class="info-button">info</span>
+        <a href="https://legnes.github.io/freecell">live project</a>
+        <a href="https://github.com/legnes/freecell">source</a>
       </div>
-      <button class="link-button" onclick="toggleVisibility.call(this)">info</button>
-      <a href="https://legnes.github.io/checkerboard">live project</a>
-      <a href="https://github.com/legnes/checkerboard">source</a>
-    </div>
-    <div class="dropdown-content visually-hidden">
-      Checkerboard is a threejs/webgl take on a doodle I've done since I was a kid (it looks like this):
+    </summary>
+    <div class="dropdown-content">
+      I made this freecell for my mom, who used to play religiously but couldn't find any simple, minimal versions online. My implementation owes its chassis and much of its polish to a <a href="https://github.com/deck-of-cards/deck-of-cards">Deck of Cards</a> javascript library, which I overrode and extended to create the gameplay. I've included some aspects of progressive web apps like installability and a service worker for offline caching.
       <div>
-        <img loading="lazy" class="image-medium" src="assets/check1.jpg" alt="A warped checkerboard sketched on graph paper." />
-        <img loading="lazy" class="image-medium" src="assets/check2.jpg" alt="Several more warped checkerboards sketched on graph paper." />
-      </div>
-      Initially conceived as an excuse to play with full-screen quads + frag shaders, Checkerboard grew into a small-scale particle system driven by a physical simulation running on the gpu. I had a blast working out a Runge-Kutta integrator and some simple lens optics!
-      <div>
-        <img loading="lazy" class="image-medium" src="assets/check3.jpg" alt="Checkerboard app, including an options menu with settings for particles, the checkerboard, gravity, the lens, and others." />
+        <img loading="lazy" class="image-medium" src="assets/freecell1.jpg" alt="Freecell app at the beginning of a game" />
+        <img loading="lazy" class="image-medium" src="assets/freecell2.jpg" alt="Freecell app after completing a game" />
       </div>
     </div>
-  </div></section>
+  </details>
 
   <!-- waves -->
-  <section><div>
-    <div class="flex flex-row row-medium row-wiggle">
-      <div class="row-label">
-        <img loading="eager" class="image-tiny" src="assets/thumb_jueves.png" alt="" />
-        waves
+  <details>
+    <summary>
+      <div class="summary-row">
+        <div>
+          <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_jueves.png" alt="" />
+          waves
+        </div>
+        <span class="info-button">info</span>
+        <a href="https://legnes.github.io/jueves">live project</a>
+        <a href="https://github.com/legnes/jueves">source</a>
       </div>
-      <button class="link-button" onclick="toggleVisibility.call(this)">info</button>
-      <a href="https://legnes.github.io/jueves">live project</a>
-      <a href="https://github.com/legnes/jueves">source</a>
-    </div>
-    <div class="dropdown-content visually-hidden">
+    </summary>
+    <div class="dropdown-content">
       I built Waves for the Global Game Jam 2017. It's an expansion and variation on <a href="https://threejs.org/examples/#webgl_gpgpu_water">an existing threejs demo</a>. No small part of the ~40 hours jamming time went towards creating the canvas/key control scheme and tuning the simulation for gameplay (there was a nasty energy leak from the input model). I stuck with pretty simple shader logic but I ended up happy with the look!
       <div>
         <img loading="lazy" class="image-medium" src="assets/jueves1.jpg" alt="Waves app. A small ball floating on a bumpy, etherial surface." />
       </div>
     </div>
-  </div></section>
+  </details>
 
   <!-- l systems -->
-  <section><div>
-    <div class="flex flex-row row-medium row-wiggle">
-      <div class="row-label">
-        <img loading="eager" class="image-tiny" src="assets/thumb_robotanical.png" alt="" />
-        robotanical
+  <details>
+    <summary>
+      <div class="summary-row">
+        <div>
+          <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_robotanical.png" alt="" />
+          robotanical
+        </div>
+        <span class="info-button">info</span>
+        <a href="https://legnes.github.io/robotanical">live project</a>
+        <a href="https://github.com/legnes/robotanical">source</a>
       </div>
-      <button class="link-button" onclick="toggleVisibility.call(this)">info</button>
-      <a href="https://legnes.github.io/robotanical">live project</a>
-      <a href="https://github.com/legnes/robotanical">source</a>
-    </div>
-    <div class="dropdown-content visually-hidden">
-      Ethan Edwards and I collaborated on Robotanical for ProcJam 2016, although busy schedules left it in a somewhat unfinished state. The idea was to cultivate a virtual garden of plants grown by Lindenmayer systems and parsed into svg by a turtle renderer. The version here demonstrates the core functionality by implementing a few well-known L-systems.
+    </summary>
+    <div class="dropdown-content">
+      My friend <a href="https://ethanmedwards.wixsite.com/portfolio">Ethan Edwards</a> and I collaborated on Robotanical for ProcJam 2016, although busy schedules left it in a somewhat unfinished state. The idea was to cultivate a virtual garden of plants grown by Lindenmayer systems and parsed into svg by a turtle renderer. The version here demonstrates the core functionality by implementing a few well-known L-systems.
       <div>
         <img loading="lazy" class="image-medium" src="assets/robotanical1.jpg" alt="Robotanical app. Several fractals and branching plant-like structures arranged in a grid." />
       </div>
     </div>
-  </div></section>
+  </details>
 
   <!-- walk -->
-  <section><div>
-    <div class="flex flex-row row-medium row-wiggle">
-      <div class="row-label">
-        <img loading="eager" class="image-tiny" src="assets/thumb_walk.png" alt="" />
-        walk
+  <details>
+    <summary>
+      <div class="summary-row">
+        <div>
+          <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_walk.png" alt="" />
+          walk
+        </div>
+        <span class="info-button">info</span>
+        <a href="https://legnes.github.io/walk">live project</a>
+        <a href="https://github.com/legnes/walk">source</a>
       </div>
-      <button class="link-button" onclick="toggleVisibility.call(this)">info</button>
-      <a href="https://legnes.github.io/walk">live project</a>
-      <a href="https://github.com/legnes/walk">source</a>
-    </div>
-    <div class="dropdown-content visually-hidden">
+    </summary>
+    <div class="dropdown-content">
       Walk is an animation/experiment that attempts to fill a discretized grid by propagating a random(ish), non-self-intersecting path through it. Since the odds against that are pretty high, Walk is more like a movie of a computer painting itself into a corner over and over. Try changing the step pattern!
       <div>
         <img loading="lazy" class="image-medium" src="assets/walk1.jpg" alt="Walk app. Continents of pink pixels on a white background sit above the numbers 8, 4, 2, and an icon of a chess knight." />
       </div>
     </div>
-  </div></section>
+  </details>
 
   <!-- phenomenol -->
-  <section><div>
-    <div class="flex flex-row row-medium row-wiggle">
-      <div class="row-label">
-        <img loading="eager" class="image-tiny" src="assets/thumb_phenomenol.png" alt="" />
-        phenomenol
+  <details>
+    <summary>
+      <div class="summary-row">
+        <div>
+          <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_phenomenol.png" alt="" />
+          phenomenol
+        </div>
+        <span class="info-button">info</span>
+        <a href="https://legnes.github.io/phenomenol">live project</a>
+        <span>source</span>
       </div>
-      <button class="link-button" onclick="toggleVisibility.call(this)">info</button>
-      <a href="https://legnes.github.io/phenomenol">live project</a>
-      <span>source</span>
-    </div>
-    <div class="dropdown-content visually-hidden">
+    </summary>
+    <div class="dropdown-content">
       I should probably explain the controls to you now. When I made Phenomenol back in 2014, I wanted it to be a sort of 3d line rider. There are two third-person points of view from which you can draw platforms in the space (mouse to draw, z to toggle pov). While in this drawing mode, you can control (using wasd) a marker that determines how far away from the camera the platforms will be placed. The idea is to place platforms so that the first-person character (wasd + mouse) can, by traversing them, collect the spinning cubes around the level. If you run out of platforms, don't worry; in first-person mode you can shoot (lmb) projectiles to collect/recall them. Last thing: those blue boxes on the ground in each corner will launch you into the air, which can be helpful. Phenomenol came out a tedious and unforgiving game, but if you approach it with patience it ~can~ be (strangely) compelling.
-      NB: Phenomenol was original made in a much older version of unity, and rebuilding it for the post-flash era introduced some strangeness. Then again, it was pretty strange to begin with...
+      NB: Phenomenol was originally made in a much older version of unity, and rebuilding it for the post-flash era introduced some strangeness. Then again, it was pretty strange to begin with...
       <div>
         <img loading="lazy" class="image-medium" src="assets/phenomenol1.jpg" alt="Phenomenol game. Neon platforms float in a stark drab room." />
       </div>
     </div>
-  </div></section>
+  </details>
 
   <!-- eprnd -->
-  <section><div>
-    <div class="flex flex-row row-medium row-wiggle">
-      <div class="row-label">
-        <img loading="eager" class="image-tiny" src="assets/thumb_eprnd.png" alt="" />
-        epr&d
+  <details>
+    <summary>
+      <div class="summary-row">
+        <div>
+          <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_eprnd.png" alt="" />
+          epr&d
+        </div>
+        <span class="info-button">info</span>
+        <a href="https://legnes.github.io/eprnd">live project</a>
+        <span>source</span>
       </div>
-      <button class="link-button" onclick="toggleVisibility.call(this)">info</button>
-      <a href="https://legnes.github.io/eprnd">live project</a>
-      <span>source</span>
-    </div>
-    <div class="dropdown-content visually-hidden">
-      For the Global Game Jam 2014, I teamed up with Ethan Edwards to make EPR&D. There's always a theme for GGJ and in 2014 it was something about what we see not being what really is or...I don't remember. But I'd had this idea in my head for a while about a game whose mechanic only works when you can't see it work, and we decided to go with that.
+    </summary>
+    <div class="dropdown-content">
+      For the Global Game Jam 2014, I teamed up with my friend <a href="https://ethanmedwards.wixsite.com/portfolio">Ethan Edwards</a> to make EPR&D. There's always a theme for GGJ and in 2014 it was "We don't see things as they are, we see them as we are". I'd had this idea in my head for a while about a game whose mechanic only works when you can't see it work, and we decided to go with that.
       NB: This is a rebuild of an old unity project and as such may have even more bugs than it did originally.
       <div>
         <img loading="lazy" class="image-medium" src="assets/eprnd1.jpg" alt="EPRnD game. An eyeball, a computer, walls, and a box sitting on a computer keyboard." />
       </div>
     </div>
-  </div></section>
+  </details>
 
 </main></body>
 </html>
