@@ -10,14 +10,18 @@
     }
     .summary-row {
       display: inline-grid;
-      grid-template-columns: 30% 20% 20% 20%;
+      grid-template-columns: 18em 6em 6em;
       align-items: baseline;
-      justify-content: space-between;
       width: 90%;
-      cursor: default;
     }
     .summary-row:hover {
-      animation: wiggle 10s alternate infinite ease-in-out 4s;
+      font-weight: bold;
+      animation: wiggle 12s alternate infinite ease-in-out 8s;
+    }
+    @media (max-width: 1000px) {
+      .summary-row {
+        grid-template-columns: 1fr 6em 6em;
+      }
     }
     .info-button {
       color: blue;
@@ -28,9 +32,6 @@
       font: inherit;
       text-decoration: underline;
     }
-    .info-button:active {
-      pointer-events: none;
-    }
     .gallery {
       display: flex;
       flex-direction: row;
@@ -40,7 +41,7 @@
       flex-wrap: wrap;
     }
     .gallery-item {
-      margin: 0 0 1rem 0;
+      margin: 1rem 1rem 0 0;
     }
     .row-label {
       width: 30%;
@@ -85,9 +86,8 @@
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_s.png" alt="" />
           <h1 class="inline">sam engel</h1>
         </div>
-        <span class="info-button">info</span>
-        <span>live project</span>
-        <span>source</span>
+        <span></span>
+        <span><span class="info-button">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -101,11 +101,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_websketches.png" alt="" />
-          web sketches
+          <a href="https://legnes.github.io/web-sketches">web sketches</a>
         </div>
-        <span class="info-button">info</span>
-        <a href="https://legnes.github.io/web-sketches">live project</a>
-        <a href="https://github.com/legnes/web-sketches">source</a>
+        <span><a href="https://github.com/legnes/web-sketches">source</a></span>
+        <span><span class="info-button">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -135,9 +134,8 @@
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_wkrt.png" alt="" />
           weekend raytracer
         </div>
-        <span class="info-button">info</span>
-        <span>live project</span>
-        <a href="https://github.com/legnes/weekend-raytracer-rs">source</a>
+        <span><a href="https://github.com/legnes/weekend-raytracer-rs">source</a></span>
+        <span><span class="info-button">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -169,11 +167,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_telegraph.png" alt="" />
-          semaphore telegraph
+          <a href="https://legnes.github.io/semaphore-telegraph">semaphore telegraph</a>
         </div>
-        <span class="info-button">info</span>
-        <a href="https://legnes.github.io/semaphore-telegraph">live project</a>
-        <a href="https://github.com/legnes/semaphore-telegraph">source</a>
+        <span><a href="https://github.com/legnes/semaphore-telegraph">source</a></span>
+        <span><span class="info-button">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -194,11 +191,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_sdf.png" alt="" />
-          sdf text
+          <a href="https://legnes.github.io/sdf-text">sdf text</a>
         </div>
-        <span class="info-button">info</span>
-        <a href="https://legnes.github.io/sdf-text">live project</a>
-        <a href="https://github.com/legnes/sdf-text">source</a>
+        <span><a href="https://github.com/legnes/sdf-text">source</a></span>
+        <span><span class="info-button">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -223,11 +219,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_crosswords.png" alt="" />
-          crossword corpus
+          <a href="https://xw-data.herokuapp.com">crossword corpus</a>
         </div>
-        <span class="info-button">info</span>
-        <a href="https://xw-data.herokuapp.com">live project</a>
-        <a href="https://github.com/legnes/xw-data">source</a>
+        <span><a href="https://github.com/legnes/xw-data">source</a></span>
+        <span><span class="info-button">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -253,9 +248,8 @@
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_compute.png" alt="" />
           arsiliath compute workshop
         </div>
-        <span class="info-button">info</span>
-        <span>live project</span>
-        <span>source</span>
+        <span></span>
+        <span><span class="info-button">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -299,11 +293,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_check.png" alt="" />
-          checkerboard
+          <a href="https://legnes.github.io/checkerboard">checkerboard</a>
         </div>
-        <span class="info-button">info</span>
-        <a href="https://legnes.github.io/checkerboard">live project</a>
-        <a href="https://github.com/legnes/checkerboard">source</a>
+        <span><a href="https://github.com/legnes/checkerboard">source</a></span>
+        <span><span class="info-button">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -325,11 +318,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_folds.png" alt="" />
-          folds
+          <a href="https://legnes.github.io/folds">folds</a>
         </div>
-        <span class="info-button">info</span>
-        <a href="https://legnes.github.io/folds">live project</a>
-        <a href="https://github.com/legnes/folds">source</a>
+        <span><a href="https://github.com/legnes/folds">source</a></span>
+        <span><span class="info-button">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -353,11 +345,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_freecell.png" alt="" />
-          mom's freecell
+          <a href="https://legnes.github.io/freecell">mom's freecell</a>
         </div>
-        <span class="info-button">info</span>
-        <a href="https://legnes.github.io/freecell">live project</a>
-        <a href="https://github.com/legnes/freecell">source</a>
+        <span><a href="https://github.com/legnes/freecell">source</a></span>
+        <span><span class="info-button">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -375,11 +366,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_jueves.png" alt="" />
-          waves
+          <a href="https://legnes.github.io/jueves">waves</a>
         </div>
-        <span class="info-button">info</span>
-        <a href="https://legnes.github.io/jueves">live project</a>
-        <a href="https://github.com/legnes/jueves">source</a>
+        <span><a href="https://github.com/legnes/jueves">source</a></span>
+        <span><span class="info-button">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -396,11 +386,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_robotanical.png" alt="" />
-          robotanical
+          <a href="https://legnes.github.io/robotanical">robotanical</a>
         </div>
-        <span class="info-button">info</span>
-        <a href="https://legnes.github.io/robotanical">live project</a>
-        <a href="https://github.com/legnes/robotanical">source</a>
+        <span><a href="https://github.com/legnes/robotanical">source</a></span>
+        <span><span class="info-button">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -417,11 +406,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_walk.png" alt="" />
-          walk
+          <a href="https://legnes.github.io/walk">walk</a>
         </div>
-        <span class="info-button">info</span>
-        <a href="https://legnes.github.io/walk">live project</a>
-        <a href="https://github.com/legnes/walk">source</a>
+        <span><a href="https://github.com/legnes/walk">source</a></span>
+        <span><span class="info-button">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -438,11 +426,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_phenomenol.png" alt="" />
-          phenomenol
+          <a href="https://legnes.github.io/phenomenol">phenomenol</a>
         </div>
-        <span class="info-button">info</span>
-        <a href="https://legnes.github.io/phenomenol">live project</a>
-        <span>source</span>
+        <span></span>
+        <span><span class="info-button">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -460,11 +447,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_eprnd.png" alt="" />
-          epr&d
+          <a href="https://legnes.github.io/eprnd">epr&d</a>
         </div>
-        <span class="info-button">info</span>
-        <a href="https://legnes.github.io/eprnd">live project</a>
-        <span>source</span>
+        <span></span>
+        <span><span class="info-button">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
