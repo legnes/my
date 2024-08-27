@@ -14,16 +14,22 @@
       align-items: baseline;
       width: 90%;
     }
-    .summary-row:hover {
-      font-weight: bold;
-      animation: wiggle 12s alternate infinite ease-in-out 8s;
-    }
     @media (max-width: 1000px) {
       .summary-row {
         grid-template-columns: 1fr 6em 6em;
       }
     }
-    .info-button {
+    .summary-row:hover {
+      font-weight: bold;
+      animation: wiggle 12s alternate infinite ease-in-out 8s;
+    }
+    .my-name {
+      display: inline;
+      font-weight: bold;
+      font-size: inherit;
+      margin: 0;
+    }
+    .info-link {
       color: blue;
       cursor: pointer;
       background: none;
@@ -31,6 +37,9 @@
       padding: 0;
       font: inherit;
       text-decoration: underline;
+    }
+    .dropdown-content {
+      margin: 0.5rem 1.5rem 1rem 1.5rem;
     }
     .gallery {
       display: flex;
@@ -43,12 +52,6 @@
     .gallery-item {
       margin: 1rem 1rem 0 0;
     }
-    .row-label {
-      width: 30%;
-    }
-    .dropdown-content {
-      margin: 0.5rem 1.5rem 1rem 1.5rem;
-    }
     .image-thumb {
       height: 2rem;
       width: auto;
@@ -59,14 +62,6 @@
     }
     .image-medium {
       height: 20rem;
-    }
-    .inline {
-      display: inline;
-    }
-    h1 {
-      font-weight: bold;
-      font-size: inherit;
-      margin: 0;
     }
     .text-small {
       font-size: 16px;
@@ -84,10 +79,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_s.png" alt="" />
-          <h1 class="inline">sam engel</h1>
+          <h1 class="my-name">sam engel</h1>
         </div>
         <span></span>
-        <span><span class="info-button">info</span></span>
+        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -104,7 +99,7 @@
           <a href="https://legnes.github.io/web-sketches">web sketches</a>
         </div>
         <span><a href="https://github.com/legnes/web-sketches">source</a></span>
-        <span><span class="info-button">info</span></span>
+        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -135,7 +130,7 @@
           weekend raytracer
         </div>
         <span><a href="https://github.com/legnes/weekend-raytracer-rs">source</a></span>
-        <span><span class="info-button">info</span></span>
+        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -170,7 +165,7 @@
           <a href="https://legnes.github.io/semaphore-telegraph">semaphore telegraph</a>
         </div>
         <span><a href="https://github.com/legnes/semaphore-telegraph">source</a></span>
-        <span><span class="info-button">info</span></span>
+        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -194,7 +189,7 @@
           <a href="https://legnes.github.io/sdf-text">sdf text</a>
         </div>
         <span><a href="https://github.com/legnes/sdf-text">source</a></span>
-        <span><span class="info-button">info</span></span>
+        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -222,7 +217,7 @@
           <a href="https://xw-data.herokuapp.com">crossword corpus</a>
         </div>
         <span><a href="https://github.com/legnes/xw-data">source</a></span>
-        <span><span class="info-button">info</span></span>
+        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -249,7 +244,7 @@
           arsiliath compute workshop
         </div>
         <span></span>
-        <span><span class="info-button">info</span></span>
+        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -296,7 +291,7 @@
           <a href="https://legnes.github.io/checkerboard">checkerboard</a>
         </div>
         <span><a href="https://github.com/legnes/checkerboard">source</a></span>
-        <span><span class="info-button">info</span></span>
+        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -321,7 +316,7 @@
           <a href="https://legnes.github.io/folds">folds</a>
         </div>
         <span><a href="https://github.com/legnes/folds">source</a></span>
-        <span><span class="info-button">info</span></span>
+        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -348,7 +343,7 @@
           <a href="https://legnes.github.io/freecell">mom's freecell</a>
         </div>
         <span><a href="https://github.com/legnes/freecell">source</a></span>
-        <span><span class="info-button">info</span></span>
+        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -369,7 +364,7 @@
           <a href="https://legnes.github.io/jueves">waves</a>
         </div>
         <span><a href="https://github.com/legnes/jueves">source</a></span>
-        <span><span class="info-button">info</span></span>
+        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -389,7 +384,7 @@
           <a href="https://legnes.github.io/robotanical">robotanical</a>
         </div>
         <span><a href="https://github.com/legnes/robotanical">source</a></span>
-        <span><span class="info-button">info</span></span>
+        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -409,7 +404,7 @@
           <a href="https://legnes.github.io/walk">walk</a>
         </div>
         <span><a href="https://github.com/legnes/walk">source</a></span>
-        <span><span class="info-button">info</span></span>
+        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -429,7 +424,7 @@
           <a href="https://legnes.github.io/phenomenol">phenomenol</a>
         </div>
         <span></span>
-        <span><span class="info-button">info</span></span>
+        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -450,7 +445,7 @@
           <a href="https://legnes.github.io/eprnd">epr&d</a>
         </div>
         <span></span>
-        <span><span class="info-button">info</span></span>
+        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
