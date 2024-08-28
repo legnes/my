@@ -1,42 +1,29 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="shortcut icon" type="image/png" href="assets/s.png"/>
   <title>sam</title>
   <style>
     body {
       font-size: 20px;
       padding: 0 2rem;
-      text-size-adjust: 200%;
     }
     .summary-row {
       display: inline-grid;
-      grid-template-columns: 18em 6em 6em;
+      grid-template-columns: 16em 6em 0fr;
       align-items: baseline;
-      width: 90%;
+      padding: 4px 0;
+      max-width: 90%;
     }
     @media (max-width: 1000px) {
       .summary-row {
-        grid-template-columns: 1fr 6em 6em;
+        grid-template-columns: 50vw 6em 0fr;
       }
     }
     .summary-row:hover {
       font-weight: bold;
-      animation: wiggle 12s alternate infinite ease-in-out 8s;
-    }
-    .my-name {
-      display: inline;
-      font-weight: bold;
-      font-size: inherit;
-      margin: 0;
-    }
-    .info-link {
-      color: blue;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 0;
-      font: inherit;
-      text-decoration: underline;
+      animation: wiggle 12s alternate infinite ease-in-out 4s;
     }
     .dropdown-content {
       margin: 0.5rem 1.5rem 1rem 1.5rem;
@@ -52,10 +39,23 @@
     .gallery-item {
       margin: 1rem 1rem 0 0;
     }
+    h1 {
+      display: inline;
+      font-weight: bold;
+      font-size: inherit;
+      margin: 0;
+    }
+    h2 {
+      display: inline;
+      font-weight: inherit;
+      font-size: inherit;
+      margin: 0;
+    }
     .image-thumb {
       height: 2rem;
       width: auto;
       transform: translate(0, 0.5rem);
+      margin-left: 4px;
     }
     .image-small {
       height: 10rem;
@@ -79,10 +79,9 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_s.png" alt="" />
-          <h1 class="my-name">sam engel</h1>
+          <h1>sam engel</h1>
         </div>
         <span></span>
-        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -96,10 +95,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_websketches.png" alt="" />
-          <a href="https://legnes.github.io/web-sketches">web sketches</a>
+          <h2>web sketches</h2>
         </div>
+        <span><a href="https://legnes.github.io/web-sketches">live project</a></span>
         <span><a href="https://github.com/legnes/web-sketches">source</a></span>
-        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -127,10 +126,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_wkrt.png" alt="" />
-          weekend raytracer
+          <h2>weekend raytracer</h2>
         </div>
+        <span></span>
         <span><a href="https://github.com/legnes/weekend-raytracer-rs">source</a></span>
-        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -162,10 +161,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_telegraph.png" alt="" />
-          <a href="https://legnes.github.io/semaphore-telegraph">semaphore telegraph</a>
+          <h2>semaphore telegraph</h2>
         </div>
+        <span><a href="https://legnes.github.io/semaphore-telegraph">live project</a></span>
         <span><a href="https://github.com/legnes/semaphore-telegraph">source</a></span>
-        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -186,10 +185,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_sdf.png" alt="" />
-          <a href="https://legnes.github.io/sdf-text">sdf text</a>
+          <h2>sdf text</h2>
         </div>
+        <span><a href="https://legnes.github.io/sdf-text">live project</a></span>
         <span><a href="https://github.com/legnes/sdf-text">source</a></span>
-        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -214,10 +213,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_crosswords.png" alt="" />
-          <a href="https://xw-data.herokuapp.com">crossword corpus</a>
+          <h2>crossword corpus</h2>
         </div>
+        <span><a href="https://xw-data.herokuapp.com">live project</a></span>
         <span><a href="https://github.com/legnes/xw-data">source</a></span>
-        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -241,10 +240,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_compute.png" alt="" />
-          arsiliath compute workshop
+          <h2>arsiliath compute workshop</h2>
         </div>
         <span></span>
-        <span><span class="info-link">info</span></span>
+        <span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -288,10 +287,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_check.png" alt="" />
-          <a href="https://legnes.github.io/checkerboard">checkerboard</a>
+          <h2>checkerboard</h2>
         </div>
+        <span><a href="https://legnes.github.io/checkerboard">live project</a></span>
         <span><a href="https://github.com/legnes/checkerboard">source</a></span>
-        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -313,10 +312,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_folds.png" alt="" />
-          <a href="https://legnes.github.io/folds">folds</a>
+          <h2>folds</h2>
         </div>
+        <span><a href="https://legnes.github.io/folds">live project</a></span>
         <span><a href="https://github.com/legnes/folds">source</a></span>
-        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -340,10 +339,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_freecell.png" alt="" />
-          <a href="https://legnes.github.io/freecell">mom's freecell</a>
+          <h2>mom's freecell</h2>
         </div>
+        <span><a href="https://legnes.github.io/freecell">live project</a></span>
         <span><a href="https://github.com/legnes/freecell">source</a></span>
-        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -361,10 +360,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_jueves.png" alt="" />
-          <a href="https://legnes.github.io/jueves">waves</a>
+          <h2>waves</h2>
         </div>
+        <span><a href="https://legnes.github.io/jueves">live project</a></span>
         <span><a href="https://github.com/legnes/jueves">source</a></span>
-        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -381,10 +380,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_robotanical.png" alt="" />
-          <a href="https://legnes.github.io/robotanical">robotanical</a>
+          <h2>robotanical</h2>
         </div>
+        <span><a href="https://legnes.github.io/robotanical">live project</a></span>
         <span><a href="https://github.com/legnes/robotanical">source</a></span>
-        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -401,10 +400,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_walk.png" alt="" />
-          <a href="https://legnes.github.io/walk">walk</a>
+          <h2>walk</h2>
         </div>
+        <span><a href="https://legnes.github.io/walk">live project</a></span>
         <span><a href="https://github.com/legnes/walk">source</a></span>
-        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -421,10 +420,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_phenomenol.png" alt="" />
-          <a href="https://legnes.github.io/phenomenol">phenomenol</a>
+          <h2>phenomenol</h2>
         </div>
+        <span><a href="https://legnes.github.io/phenomenol">live project</a></span>
         <span></span>
-        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
@@ -442,10 +441,10 @@
       <div class="summary-row">
         <div>
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_eprnd.png" alt="" />
-          <a href="https://legnes.github.io/eprnd">epr&d</a>
+          <h2>epr&d</h2>
         </div>
+        <span><a href="https://legnes.github.io/eprnd">live project</a></span>
         <span></span>
-        <span><span class="info-link">info</span></span>
       </div>
     </summary>
     <div class="dropdown-content">
