@@ -9,7 +9,7 @@
   }
 
   h1 {
-    font-size: 20px;
+    font-size: 20pt;
   }
 
   h2 {
@@ -17,7 +17,7 @@
   }
 
   h2, h3, p, li, span {
-    font-size: 16px;
+    font-size: 12pt;
   }
 
   h3 {
@@ -86,15 +86,11 @@
     }
 
     @page {
-      margin: 0.75in 1in;
+      margin: 0.75in;
     }
 
-    h1 {
-      font-size: 16px;
-    }
-
-    h2, h3, p, li, span {
-      font-size: 14px;
+    a:visited {
+      color: blue;
     }
   }
 </style>
@@ -119,13 +115,15 @@
 
     <div class="flex flex-col inset">
       <div class="space-above">
-        <p>I'm a Software Engineer with a focus on creative audiovisual, spatial, and scientific tools. Also talk to me about cryptic crosswords, sewing and mending, rugby union, and single-reed instruments.</p>
+        <!-- <p>I'm a Software Engineer with a focus on creative audiovisual, spatial, and scientific tools. I specialize in computer graphics, and my interests include real-time rendering, stylized rendering, distance transforms, physical simulation, and GPGPU.</p> -->
+        <p>I'm a Software Engineer with a focus on creative audiovisual, spatial, and scientific tools. I specialize in computer graphics, and my interests include real-time rendering, stylized rendering, distance transforms, physical simulation, and GPGPU. Also talk to me about cryptic crosswords, sewing and mending, rugby union, and single-reed instruments.</p>
       </div>
       <div class="space-above">
         <h3>Technical skills</h3>
         <ul>
           <li><span class="bold">Programming:</span> Typescript, Python, C#, Rust, Julia, C, Java</li>
-          <li><span class="bold">Technologies:</span> WebGL, WebGPU, Node.js, React, three.js, Unity, esbuild, PyTorch, Heroku, CouchDB, Postgres, ASP.NET</li>
+          <li><span class="bold">Technologies:</span> WebGL, WebGPU, Node.js, React, three.js, Unity, PyTorch, NoSQL, Postgres, ASP.NET</li>
+          <!-- <li><span class="bold">Technologies:</span> WebGL, WebGPU, Node.js, React, three.js, Unity, PyTorch, Heroku, CouchDB, Postgres, ASP.NET</li> -->
           <li><span class="bold">Practices:</span> Git, Code review, Design documents, Project management</li>
           <li><span class="bold">Open source contributions:</span> <a href="https://github.com/crosshare-org/crosshare">Crosshare</a>, <a href="https://github.com/tsherif/webgpu-examples">WebGPU Examples</a></li>
           <li><span class="bold">Training:</span> <i>Reinforcement Learning 1 and 2</i>, Delta Academy; <i>Compute Shaders in Unity</i>, Arsiliath</li>
@@ -148,8 +146,20 @@
         <li><p>B.A. in Chemical Physics</p></li>
         <!-- <li><p>B.A. in Chemical Physics (CGPA: 3.6845)</p></li> -->
         <li><p>Honors: Senior marshal, Dean's list 2011–2013</p></li>
-        <li><p>Relevant coursework: Computer Animation, Introduction to Quantum Computing, Data Structures in Java, Introduction to Computer Science</p></li>
-        <li><p>Relevant coursework: Quantum Mechanics I, Electromagnetic Waves & Optics, Making & Breaking Codes, Electricity & Magnetism, Linear Algebra, Calculus IV</p></li>
+        <!-- <li><p>Relevant coursework: Computer Animation, Introduction to Quantum Computing, Data Structures in Java, Introduction to Computer Science</p></li> -->
+        <li><p>Relevant coursework: Computer Animation, Introduction to Quantum Computing, Data Structures in Java, Introduction to Computer Science, Electromagnetic Waves & Optics, Making & Breaking Codes, Linear Algebra, Calculus IV</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- publications -->
+  <section class="space-above">
+    <h2>Publications</h2>
+    <hr />
+
+    <div class="section-item">
+      <ul>
+        <li><span class="bold">IEEE International Conference on Robotics and Automation</span>—A. Levy, C. Keitel, <span class="bold">S. Engel</span> and J. McLurkin, "<a href="https://ieeexplore.ieee.org/abstract/document/7138974">The Extended Velocity Obstacle and applying ORCA in the real world</a>," 2015 IEEE International Conference on Robotics and Automation (ICRA), Seattle, WA, 2015, pp. 16-22.</li>
       </ul>
     </div>
   </section>
@@ -167,47 +177,43 @@
       <p>Senior IC on the ArcGIS Maps SDK for Javascript, a data-driven large-scale geospatial visualization engine powering thousands of new web maps made daily.</p>
       <ul>
         <li>Owned several high-profile subsystems including camera animation, hittesting, heatmaps, and streaming data visualization.</li>
-        <li>Drove engine performance improvements. Optimized marker mesh sizing, alleviating overdraw and improving frame time by up to 100%. Overhauled dashed lines to use 1D SDFs, reducing vertex count by 10x or more. Enhanced batching, leading to 10x speedups for complex symbology. Modified draw order to reduce GL calls by 5%–50% in certain cases.</li>
-        <li>Shipped new camera animations for improved geographical context. Extended implementation of internal R&D paper on optimized camera transitions. Worked with A11y team to ensure best practices, gathered feedback from stakeholders, designed new user-facing API, and coordinated rollout.</li>
-        <li>Overhauled heatmap rendering. Moved implementation to the GPU. Coordinated API, implementation, and documentation changes from Gaussian to Quartic kernels. Derived approximate analytical conversion for backwards compatibility.</li>
-        <li>Organized cross-team investigations into WebGPU-readiness. Presented on WebGPU fundamentals. Evaluated continued relevance of batch rendering. Implemented parallel radix sort (5–10x faster than serial cpu-side) as part of a morton code binary tree culling algorithm.</li>
-        <li>Led adoption of WebGL2 features such as pixel buffers, sync objects, uniform buffers, and GLES 3. Shipped a custom system for encoding float16 attributes.</li>
-        <li>Developed a Typescript + esbuild workflow for local test apps, reducing developer build times from minutes to instants.</li>
-        <li>Prototyped real-time GPU-enabled analysis techniques, such as inverse distance weighting interpolation and jump flood-based 2D viewshed analysis.</li>
+        <li>Drove engine performance improvements. Optimized meshes, alleviating overdraw and decreasing frame time by up to 100% in stress tests. Reduced dashed line vertex counts by 10x or more using 1D SDFs. Improved draw call batching, leading to 10x speedups for complex cases. Modified draw order to reduce GL calls by 5%–50%.</li>
+        <li>Overhauled heatmap implementation. Moved computation to the GPU. Updated density calculation, coordinating API and documentation changes across teams.</li>
+        <!-- <li>...derived approximate analytical conversion between Gaussian and Quartic kernels for backwards compatibility.</li> -->
+        <li>Shipped new camera animations for enhanced geographical context, based on internal R&D paper. Designed new public API, worked with A11y team to ensure best practices, gathered feedback, and coordinated rollout.</li>
+        <li>Organized cross-team investigations into WebGPU-readiness. Presented on WebGPU fundamentals. Implemented and evaluated batch rendering and compute-based sorting.</li>
+        <!-- <li>...Implemented parallel radix sort (5–10x faster than serial cpu-side) as part of a morton code binary tree culling algorithm.</li> -->
+        <li>Led transition to WebGL2 and adoption of new features. Shipped a custom system for float16 attributes.</li>
+        <!-- <li>...new features such as pixel buffers, sync objects, uniform buffers, and GLES 3...</li> -->
+        <li>Prototyped real-time GPU-enabled analysis techniques, such as spatial interpolation and viewshed analysis.</li>
+        <!-- <li>...inverse distance weighting interpolation and jump-flood-based 2D viewshed analysis.</li> -->
+        <li>Developed an esbuild workflow for local test apps, reducing developer build times from minutes to instants.</li>
       </ul>
     </div>
 
     <div class="section-item">
       <div class="full-row">
-        <span><h3 class="inline">Iambic Therapeutics</h3> (previously Entos, Inc.), Remote | <span class="bold">Lead Front End Engineer</span></span>
+        <span><h3 class="inline">Iambic Therapeutics</h3> (Entos, Inc.), Remote | <span class="bold">Lead Front End Engineer</span></span>
         <p class="bold">2020–2021</p>
       </div>
       <p>Coordinated the front end team in a growing computational chemistry startup.</p>
       <ul>
-        <li>Scaled a web app from MVP to hundreds of users. Architected designs for a chemical filesystem, molecule editor, and user auth using React, TypeScript, WebGL, Python, and Postgres.</li>
-        <li>Conducted standups and retros, advised at high-level strategy meetings. Designed and ran technical interviews.</li>
+        <li>Scaled a web app from MVP to hundreds of users. Architected a chemical filesystem, molecule editor, and user auth using React, TypeScript, WebGL, Python, and Postgres.</li>
+        <li>Conducted standups and retros, advised at high-level strategy meetings. Designed and ran tech interviews.</li>
         <!-- <li>Prototyped exploratory web apps. Designed a molecule SVG renderer and a cloud computation analytics dashboard.</li> -->
-        <li>Promoted best practices like reusable components, project managment tooling, and code standards. Introduced lunch-and-learns.</li>
+        <li>Promoted best practices like reusable components, project managment tooling, and code standards.</li>
       </ul>
     </div>
 
     <div class="section-item">
-      <!-- <div class="full-row">
-        <span><h3 class="inline">CBRE Build</h3> (previously Floored), New York, NY | <span class="bold">Senior Software Engineer</span></span>
-        <p class="bold">2019–2020</p>
-      </div>
       <div class="full-row">
-        <span style="margin-left: 22.25em">Software Engineer</span>
-        <p>2015–2019</p>
-      </div> -->
-      <div class="full-row">
-        <span><h3 class="inline">CBRE Build</h3> (previously Floored), New York, NY | <span class="bold">Senior Software Engineer</span>, Software Engineer</span>
+        <span><h3 class="inline">CBRE Build</h3> (Floored), New York, NY | <span class="bold">Senior Software Engineer</span>, Software Engineer</span>
         <span><span class="bold">2019–2020</span>, 2015–2019</span>
       </div>
-      <p>Built interactive spatial visualizations at a startup acquired in 2017 by the world's largest commercial real estate services firm.</p>
+      <p>Built interactive spatial tools at a startup acquired in 2017 by the world's largest commercial real estate firm.</p>
       <ul>
         <li>Owned continuing development of a proprietary 3D WebGL rendering engine. Scoped, researched, and deployed artist-facing tools, developer diagnostics, and quality improvements.</li>
-        <li>Led development of a new LDR rendering pipeline. Identified technical and aesthetic requirements from stakeholders, set quarterly objectives, and promoted release.</li>
+        <li>Led development of a new stylized rendering pipeline. Identified technical and aesthetic requirements from stakeholders, set quarterly objectives, and promoted release.</li>
         <li>Prototyped and presented experimental features, including screen space reflections, real-time volumetric clouds, world space HTML overlay, and temporal depth of field.</li>
         <li>Delivered full-stack features across multiple products, including inter-app resource management in Node.js and SVG polygon manipulation in Mithril.js. Diagnosed and resolved production issues, including Node.js Heroku memory leaks, WebGL engine load times, and data-heavy virtualized React table performance.</li>
         <li>Ran internal graphics literature club.</li>
@@ -286,7 +292,7 @@
   </section>
 
   <!-- publications & talks -->
-  <section class="space-above">
+  <!-- <section class="space-above">
     <h2>Publications and Talks</h2>
     <hr />
 
@@ -295,6 +301,18 @@
         <li><span class="bold">NYC Nodejs meetup</span>—<a href="https://www.meetup.com/nodejs/events/252718152/">"Leaky Pipes in Build 3D"</a>, 2018</li>
         <li><span class="bold">IEEE International Conference on Robotics and Automation</span>—A. Levy, C. Keitel, <span class="bold">S. Engel</span> and J. McLurkin, "<a href="https://ieeexplore.ieee.org/abstract/document/7138974">The Extended Velocity Obstacle and applying ORCA in the real world</a>," 2015 IEEE International Conference on Robotics and Automation (ICRA), Seattle, WA, 2015, pp. 16-22.</li>
         <li><span class="bold">BMC Ecology and Evolution</span>—O'Quin, K. E, Smith, D., Naseer, Z., Schulte, J., <span class="bold">Engel, S. D</span>, Loh, Y. E, Streelman, J. T, Boore, J. L, Carleton, K. L (2011). <a href="http://escholarship.org/uc/item/8bf6m15p">Divergence in cis-regulatory sequences surrounding the opsin gene arrays of African cichlid fishes</a>. BMC Evolutionary Biology, 11(1).</a></li>
+      </ul>
+    </div>
+  </section> -->
+
+  <!-- talks -->
+  <section class="space-above">
+    <h2>Talks</h2>
+    <hr />
+
+    <div class="section-item">
+      <ul>
+        <li><span class="bold">NYC Nodejs meetup</span>—<a href="https://www.meetup.com/nodejs/events/252718152/">"Leaky Pipes in Build 3D"</a>, 2018</li>
       </ul>
     </div>
   </section>
