@@ -63,6 +63,9 @@
     .image-medium {
       height: 20rem;
     }
+    .image-wide {
+      width: 100%;
+    }
     .text-small {
       font-size: 16px;
     }
@@ -163,18 +166,19 @@
           <img loading="eager" class="image-thumb" width="1rem" height="1rem" src="assets/thumb_telegraph.png" alt="" />
           <h2>semaphore telegraph</h2>
         </div>
-        <span><a href="https://legnes.github.io/semaphore-telegraph">live project</a></span>
+        <span><a href="https://legnes.github.io/semaphore-telegraph/app">live project</a></span>
         <span><a href="https://github.com/legnes/semaphore-telegraph">source</a></span>
       </div>
     </summary>
     <div class="dropdown-content">
-      At the end of the 18th century, engineers in France constructed a network of <a href="https://en.wikipedia.org/wiki/Optical_telegraph">optical telegraphs</a>, allowing messages to be transmitted hundreds of miles in a matter of minutes. As a production tool for the short film <a href="https://f.io/hMAeqFMa">Telegraph Tower</a>, I wrote a blender script to programatically animate a model of a sempahore telegraph transmitting an arbitrary input string.
+      At the end of the 18th century, engineers in France constructed a network of <a href="https://en.wikipedia.org/wiki/Optical_telegraph">optical telegraphs</a>, allowing messages to be transmitted hundreds of miles in a matter of minutes. As a production tool for the short film <a href="https://vimeo.com/1047888540">Telegraph</a>, I wrote a blender script to programatically animate a model of a sempahore telegraph transmitting an arbitrary input string. I also put together a web app that lets you enter a message for the tower to replay in semaphore.
       <div>
         <video class="image-medium" controls><source src="assets/telegraph1.webm"></video>
+        <img loading="lazy" class="image-medium" src="assets/telegraph3.jpg" alt="The semaphore telegraph web app" />
       </div>
-      I also put together a simple web app version of the tool with additional animation options:
+      The message is contained in the url so you can send it to a friend. In order to keep the message plaintext hidden, I came up with a scheme to encode it as emojis. Each UTF-16 code unit in the input message gets split into two 8-bit integers. Then, a (single code point) emoji is drawn from a secret key and split into its two UTF-16 surrogates. Each of the 8-bit integers from the message is XORed with one of the 16-bit surrogates from the emoji. Only the least significant 8 bits are modified, to make sure the result stays within the UTF-16 surrogate range. The new code units form a surrogate pair, which is recombined into a valid (though not always populated) unicode code point.
       <div>
-        <img loading="lazy" class="image-medium" src="assets/telegraph2.jpg" alt="The semaphore telegraph web app" />
+        <img loading="lazy" class="image-wide" src="assets/telegraph4.png" alt="A url from the semaphore telegraph web app, which has a url query parameter of random ejomis" />
       </div>
     </div>
   </details>
